@@ -4,7 +4,7 @@ import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import CardTooltipProps from "../Components/Props/CardTooltipProps";
 import { FaBookmark, FaHeart } from "react-icons/fa";
-import { getNonFiction } from "../Api/api";
+import { getNonFiction } from "../Api/CardApi";
 import { data } from "./data";
 
 const Fiction = () => {
@@ -12,13 +12,18 @@ const Fiction = () => {
 
   useEffect(() => {
     getNonFiction().then((res: any) => {
-      setCard(res?.data);
+      if (res && res.data) {
+        setCard(res.data);
+      } else {
+        console.log(res.message);
+        setCard([]);
+      }
     });
   }, []);
 
   return (
     <div className="w-full min-h-[100vh] bg-white pt-[40px] py-2 px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center lg:place-items-end">
-      {data.map((props: any) => (
+      {card.map((props: any) => (
         <Link to={`${props._id}`} key={props._id} className="p-2">
           <div className="m-4 py-6 px-5 w-[95%] sm:w-[90%] md:w-[95%] lg:w-[90%] bg-gray-50 rounded-[12px] text-[purple] h-[455px] transition-all duration-[350ms] flex justify-center items-start flex-col border border-[purple] bxs">
             <div className="w-full mt-3 mb-4 flex justify-between items-center">

@@ -5,7 +5,8 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { FaCamera } from "react-icons/fa";
 import pix from "../assets/PrinceJohn.jpeg";
-import { createCard } from "../Api/api";
+import { createCard } from "../Api/CardApi";
+import jwtDecode from "jwt-decode";
 
 const CreateBlog = () => {
   const { toggle } = useContext(GlobalContext);
@@ -25,31 +26,26 @@ const CreateBlog = () => {
     setAvatar(readyimage);
   };
 
-  const handleCreateCard = async () => {
-    // const blogID = "blogid";
-    // try {
-    //   const result = await createCard(
-    //     blogID,
-    //     title,
-    //     author,
-    //     description,
-    //     image,
-    //     category,
-    //     content
-    //   );
-    //   console.log("Card created successfully:", result);
-    // } catch (error: any) {
-    //   console.error("Error creating card:", error);
-    // }
-    const result = {
-      title,
-      author,
-      description,
-      image,
-      category,
-      content,
-    };
-    console.log("...checking", result);
+  const token = localStorage.getItem("authToken");
+  const userId = token ? jwtDecode<{ id: string }>(token).id : null;
+
+  const handleCreateCard = async (e: any) => {
+    e.preventDefault();
+    try {
+      createCard(
+        userId,
+        title,
+        author,
+        image,
+        description,
+        category,
+        content
+      ).then((res) => {
+        return res.data;
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

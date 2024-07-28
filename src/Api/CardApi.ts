@@ -1,10 +1,9 @@
 import axios, { AxiosResponse } from "axios";
-import { ObjectId } from "mongoose";
 
 const url: string = "http://localhost:4007";
 
 export const createCard = async (
-  blogID: any,
+  blogID: string,
   title: string,
   author: string,
   description: string,
@@ -160,7 +159,7 @@ export const getBookmarks = async () => {
   }
 };
 
-export const deleteCard = async (cardID: ObjectId) => {
+export const deleteCard = async (cardID: string) => {
   try {
     return await axios
       .delete(`${url}/card/delete-card/${cardID}`)

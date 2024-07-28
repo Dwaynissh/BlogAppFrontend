@@ -16,6 +16,9 @@ import Liked from "../Dashboard/Liked";
 import Login from "../Auth/Login";
 import Register from "../Auth/Register";
 import DetailPage from "../Dashboard/DetailsPage/DetailPage";
+import Verify from "../Auth/Verify";
+import WelcomeAlert from "../Auth/WelcomeAlert";
+import FirsttimeScreen from "../Auth/FirstTime/FirsttimeScreen";
 
 export const MainRouter = createBrowserRouter([
   {
@@ -35,6 +38,18 @@ export const MainRouter = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+  },
+  {
+    path: "/verify",
+    element: <Verify />,
+  },
+  {
+    path: "/welcome",
+    element: <WelcomeAlert />,
+  },
+  {
+    path: "/first-time",
+    element: <FirsttimeScreen />,
   },
   {
     path: "/dashboard",

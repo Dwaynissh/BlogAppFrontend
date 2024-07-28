@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getOneCard } from "../../Api/api";
+import { getOneCard } from "../../Api/CardApi";
 import { FaAngleRight } from "react-icons/fa";
 import DashHeader from "../../Components/Static/DashHeader";
 import { GlobalContext } from "../../Provider/ContextProvider";
