@@ -19,81 +19,80 @@ import DetailPage from "../Dashboard/DetailsPage/DetailPage";
 import Verify from "../Auth/Verify";
 import WelcomeAlert from "../Auth/WelcomeAlert";
 import FirsttimeScreen from "../Auth/FirstTime/FirsttimeScreen";
+import PrivateRouter from "./PrivateRouter";
 
 export const MainRouter = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
     children: [
       {
-        index: true,
-        element: <Hero />,
-      },
-    ],
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/register",
-    element: <Register />,
-  },
-  {
-    path: "/verify",
-    element: <Verify />,
-  },
-  {
-    path: "/welcome",
-    element: <WelcomeAlert />,
-  },
-  {
-    path: "/first-time",
-    element: <FirsttimeScreen />,
-  },
-  {
-    path: "/dashboard",
-    element: <DashLayout />,
-    children: [
-      {
-        index: true,
-        element: <HomeScreen />,
-      },
-      {
-        path: "publish",
-        element: <CreateBlog />,
-      },
-      {
-        path: "adventure",
-        element: <Adventure />,
-      },
-      {
-        path: "fiction",
-        element: <Fiction />,
-      },
-      {
-        path: "nonfiction",
-        element: <Nonfiction />,
-      },
-      {
-        path: "religious",
-        element: <Religious />,
+        element: (
+          <PrivateRouter>
+            <DashLayout />
+          </PrivateRouter>
+        ),
+        children: [
+          {
+            index: true,
+            element: <HomeScreen />,
+          },
+          {
+            path: "publish",
+            element: <CreateBlog />,
+          },
+          {
+            path: "adventure",
+            element: <Adventure />,
+          },
+          {
+            path: "fiction",
+            element: <Fiction />,
+          },
+          {
+            path: "nonfiction",
+            element: <Nonfiction />,
+          },
+          {
+            path: "religious",
+            element: <Religious />,
+          },
+          {
+            path: "bookmark",
+            element: <BookMark />,
+          },
+          {
+            path: "liked",
+            element: <Liked />,
+          },
+          {
+            path: "settings",
+            element: <Settings />,
+          },
+          {
+            path: ":ID",
+            element: <DetailPage />,
+          },
+        ],
       },
       {
-        path: "bookmark",
-        element: <BookMark />,
+        path: "/login",
+        element: <Login />,
       },
       {
-        path: "liked",
-        element: <Liked />,
+        path: "/register",
+        element: <Register />,
       },
       {
-        path: "settings",
-        element: <Settings />,
+        path: "/verify",
+        element: <Verify />,
       },
       {
-        path: ":ID",
-        element: <DetailPage />,
+        path: "/welcome",
+        element: <WelcomeAlert />,
+      },
+      {
+        path: "/first-time",
+        element: <FirsttimeScreen />,
       },
     ],
   },

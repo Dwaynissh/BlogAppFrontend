@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { data } from "../data";
 import { useContext } from "react";
 import { FaAngleRight } from "react-icons/fa";
-import DashHeader from "../../Components/Static/DashHeader";
+import DashHeader from "../Static/DashHeader";
 import { GlobalContext } from "../../Provider/ContextProvider";
 import blogImage from "../../assets/blog-2.jpg";
 

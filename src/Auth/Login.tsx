@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../Api/AuthApi";
 import { ClipLoader } from "react-spinners";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { FiEye } from "react-icons/fi";
 import toast, { Toaster } from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { loginState } from "../Redux/ReduxState";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Login = () => {
   const [email, setEmail] = useState<string>("");
@@ -12,6 +16,7 @@ const Login = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const onhandleSubmit = async (e: any) => {
     e.preventDefault();
@@ -20,8 +25,8 @@ const Login = () => {
         if (res?.status === 200) {
           setLoading(true);
           toast.success("Login Successfully, Welcome back 😊");
+          dispatch(loginState(res?.data));
           navigate("/dashboard");
-          return res?.data;
         } else {
           toast.error("Incorrect Email or Password");
         }
@@ -37,10 +42,19 @@ const Login = () => {
     setIsVisible(!isVisible);
   };
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+    });
+  }, []);
+
   return (
     <div className="w-full h-screen bg-gray-200 flex justify-center items-center">
       <Toaster />
-      <div className="min-h-[200px] w-[400px] p-5 shadow-sm bg-white rounded-md">
+      <div
+        className="min-h-[200px] w-[400px] p-5 shadow-sm bg-white rounded-md"
+        data-aos="fade-left"
+      >
         <div className="pb-5 w-full flex justify-center items-center">
           <div className="text-[purple] text-[20px] font-bold capitalize">
             Login to your Account here

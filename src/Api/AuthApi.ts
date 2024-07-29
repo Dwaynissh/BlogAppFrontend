@@ -16,7 +16,7 @@ export const registerUser = async (email: string, password: string) => {
 export const loginUser = async (email: string, password: string) => {
   try {
     return await axios
-      .post(`${url}/login-user`, { email, password })
+      .post(`${url}/login-user`, { email, password }, { withCredentials: true })
       .then((res: AxiosResponse) => {
         console.log("viewing api login res", res?.data);
         return res?.data;
@@ -26,22 +26,22 @@ export const loginUser = async (email: string, password: string) => {
   }
 };
 
-// export const userCookieAPI = async () => {
-//     try {
-//       return await axios
-//         .get(`${URL}/user-cookie`, { withCredentials: true })
-//         .then((res: any) => {
-//           return res.data.data;
-//         });
-//     } catch (error) {
-//       return error;
-//     }
-//   };
+export const readUserCookie = async () => {
+  try {
+    return await axios
+      .get(`${URL}/read-cookie`, { withCredentials: true })
+      .then((res: AxiosResponse<any, any>) => {
+        return res.data.data;
+      });
+  } catch (error) {
+    return error;
+  }
+};
 
-//   export const userLogOutAPI = async () => {
-//     try {
-//       return await axios.delete(`${URL}/logout`, { withCredentials: true });
-//     } catch (error) {
-//       return error;
-//     }
-//   };
+export const logoutUser = async () => {
+  try {
+    return await axios.delete(`${URL}/logout`, { withCredentials: true });
+  } catch (error) {
+    return error;
+  }
+};

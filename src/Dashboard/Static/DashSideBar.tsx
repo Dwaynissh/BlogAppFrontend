@@ -8,58 +8,10 @@ import { SiStorybook } from "react-icons/si";
 import { GlobalContext } from "../../Provider/ContextProvider";
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import CategoryProps from "../Props/CategoryProps";
-import ManageProps from "../Props/ManageProps";
-import OthersProps from "../Props/OthersProps";
-
+import CategoryProps from "../../Components/Props/CategoryProps";
+import ManageProps from "../../Components/Props/ManageProps";
+import OthersProps from "../../Components/Props/OthersProps";
 const DashSideBar = () => {
-  // const sideData = [
-  //   {
-  //     name: "fiction",
-  //     icon: <SiStorybook />,
-  //     url: "/fiction",
-  //   },
-  //   {
-  //     name: "non-fiction",
-  //     icon: <FaUserPen />,
-  //     url: "/nonfiction",
-  //   },
-  //   {
-  //     name: "religious",
-  //     icon: <PiChurchDuotone />,
-  //     url: "/religious",
-  //   },
-  //   {
-  //     name: "adventure",
-  //     icon: <GiMountainClimbing />,
-  //     url: "/adventure",
-  //   },
-  // ];
-  // const manageData = [
-  //   {
-  //     name: "bookmarks",
-  //     icon: <FaBookmark />,
-  //     url: "/bookmark",
-  //   },
-  //   {
-  //     name: "history",
-  //     icon: <FaHistory />,
-  //     url: "/",
-  //   },
-  // ];
-  // const othersData = [
-  //   {
-  //     name: "settings",
-  //     icon: <MdSettings />,
-  //     url: "/settings",
-  //   },
-  //   {
-  //     name: "Logout",
-  //     icon: <MdLogout />,
-  //     url: "/",
-  //   },
-  // ];
-
   const { toggle, handleToggle } = useContext(GlobalContext);
 
   return (
@@ -144,7 +96,6 @@ const DashSideBar = () => {
             url="settings"
             icon={<MdSettings />}
             name2="Logout"
-            url2="/"
             icon2={<MdLogout />}
           />
         </div>

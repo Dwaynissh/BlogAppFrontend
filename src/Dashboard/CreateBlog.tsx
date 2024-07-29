@@ -1,12 +1,13 @@
-import { useContext, useState } from "react";
-import DashHeader from "../Components/Static/DashHeader";
+import { useContext, useEffect, useState } from "react";
+import DashHeader from "./Static/DashHeader";
 import { GlobalContext } from "../Provider/ContextProvider";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { FaCamera } from "react-icons/fa";
 import pix from "../assets/PrinceJohn.jpeg";
 import { createCard } from "../Api/CardApi";
-import jwtDecode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
+import { useSelector } from "react-redux";
 
 const CreateBlog = () => {
   const { toggle } = useContext(GlobalContext);
@@ -17,23 +18,23 @@ const CreateBlog = () => {
   const [description, setDescription] = useState<string>("");
   const [category, setCategory] = useState<string>("");
   const [content, setContent] = useState<string>("");
+  const userToken: any = useSelector((state: any) => state.user);
 
   const handleImage = (e: any) => {
-    const file = e.target.files;
+    const file = e.target.files[0];
     const readyimage = URL.createObjectURL(file);
-
     setImage(file);
     setAvatar(readyimage);
   };
 
-  const token = localStorage.getItem("authToken");
-  const userId = token ? jwtDecode<{ id: string }>(token).id : null;
+  const decodedToken: any = jwtDecode(userToken);
+  const userID = decodedToken.id;
 
   const handleCreateCard = async (e: any) => {
     e.preventDefault();
     try {
-      createCard(
-        userId,
+      await createCard(
+        userID,
         title,
         author,
         image,
@@ -41,10 +42,11 @@ const CreateBlog = () => {
         category,
         content
       ).then((res) => {
+        console.log("Card created:", res);
         return res.data;
       });
     } catch (error) {
-      console.log(error);
+      console.log("Error creating card:", error);
     }
   };
 

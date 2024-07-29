@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../Api/AuthApi";
 import { ClipLoader } from "react-spinners";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { FiEye } from "react-icons/fi";
 import toast, { Toaster } from "react-hot-toast";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Register = () => {
   const [email, setEmail] = useState<string>("");
@@ -36,10 +38,19 @@ const Register = () => {
     setIsVisible(!isVisible);
   };
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+    });
+  }, []);
+
   return (
     <div className="w-full h-screen bg-gray-200 flex justify-center items-center">
       <Toaster />
-      <div className="min-h-[200px] w-[400px] p-5 shadow-sm bg-white rounded-md">
+      <div
+        className="min-h-[200px] w-[400px] p-5 shadow-sm bg-white rounded-md"
+        data-aos="fade-left"
+      >
         <div className="pb-5 w-full flex justify-center items-center">
           <div className="text-[purple] text-[20px] font-bold capitalize">
             Register to Create your Blog

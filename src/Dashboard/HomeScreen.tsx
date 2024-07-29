@@ -3,7 +3,7 @@ import { getAllCards } from "../Api/CardApi";
 import moment from "moment";
 import { FaBookmark } from "react-icons/fa6";
 import { GlobalContext } from "../Provider/ContextProvider";
-import DashHeader from "../Components/Static/DashHeader";
+import DashHeader from "./Static/DashHeader";
 import cardimg from "../assets/blog-2.jpg";
 import CardTooltipProps from "../Components/Props/CardTooltipProps";
 import { FaHeart } from "react-icons/fa";

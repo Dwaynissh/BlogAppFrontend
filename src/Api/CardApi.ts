@@ -3,7 +3,7 @@ import axios, { AxiosResponse } from "axios";
 const url: string = "http://localhost:4007";
 
 export const createCard = async (
-  blogID: string,
+  blogID: any,
   title: string,
   author: string,
   description: string,
@@ -22,6 +22,8 @@ export const createCard = async (
         content,
       })
       .then((res: AxiosResponse<any, any>) => {
+        console.log(".........", res);
+
         return res?.data;
       });
   } catch (error) {
@@ -46,7 +48,7 @@ export const editCard = async (
         category,
         content,
       })
-      .then((res) => {
+      .then((res: AxiosResponse<any, any>) => {
         return res.data;
       });
   } catch (error) {
@@ -56,9 +58,11 @@ export const editCard = async (
 
 export const getAllCards = async () => {
   try {
-    return await axios.get(`${url}/card/get-all-card`).then((res: any) => {
-      return res?.data;
-    });
+    return await axios
+      .get(`${url}/card/get-all-card`)
+      .then((res: AxiosResponse<any, any>) => {
+        return res?.data;
+      });
   } catch (error: any) {
     return error;
   }
@@ -68,7 +72,7 @@ export const getOneCard = async (cardID: any) => {
   try {
     return await axios
       .get(`${url}/card/get-one-card/${cardID}`)
-      .then((res: any) => {
+      .then((res: AxiosResponse<any, any>) => {
         return res?.data;
       });
   } catch (error: any) {
@@ -78,9 +82,11 @@ export const getOneCard = async (cardID: any) => {
 
 export const getByCategory = async () => {
   try {
-    return await axios.get(`${url}/card/get-by-category`).then((res: any) => {
-      return res?.data;
-    });
+    return await axios
+      .get(`${url}/card/get-by-category`)
+      .then((res: AxiosResponse<any, any>) => {
+        return res?.data;
+      });
   } catch (error: any) {
     return error;
   }
@@ -88,9 +94,11 @@ export const getByCategory = async () => {
 
 export const getFiction = async () => {
   try {
-    return await axios.get(`${url}/card/fiction`).then((res: any) => {
-      return res?.data;
-    });
+    return await axios
+      .get(`${url}/card/fiction`)
+      .then((res: AxiosResponse<any, any>) => {
+        return res?.data;
+      });
   } catch (error: any) {
     return error;
   }
@@ -98,9 +106,11 @@ export const getFiction = async () => {
 
 export const getNonFiction = async () => {
   try {
-    return await axios.get(`${url}/card/non-fiction`).then((res: any) => {
-      return res?.data;
-    });
+    return await axios
+      .get(`${url}/card/non-fiction`)
+      .then((res: AxiosResponse<any, any>) => {
+        return res?.data;
+      });
   } catch (error: any) {
     return error;
   }
@@ -108,9 +118,11 @@ export const getNonFiction = async () => {
 
 export const getReligious = async () => {
   try {
-    return await axios.get(`${url}/card/religious`).then((res: any) => {
-      return res?.data;
-    });
+    return await axios
+      .get(`${url}/card/religious`)
+      .then((res: AxiosResponse<any, any>) => {
+        return res?.data;
+      });
   } catch (error: any) {
     return error;
   }
@@ -118,9 +130,11 @@ export const getReligious = async () => {
 
 export const getAdventure = async () => {
   try {
-    return await axios.get(`${url}/card/adventure`).then((res: any) => {
-      return res?.data;
-    });
+    return await axios
+      .get(`${url}/card/adventure`)
+      .then((res: AxiosResponse<any, any>) => {
+        return res?.data;
+      });
   } catch (error: any) {
     return error;
   }
@@ -151,9 +165,11 @@ export const removeBookmark = async (cardID: any) => {
 
 export const getBookmarks = async () => {
   try {
-    return await axios.get(`${url}/bookmark/get-bookmarks`).then((res: any) => {
-      return res?.data;
-    });
+    return await axios
+      .get(`${url}/bookmark/get-bookmarks`)
+      .then((res: AxiosResponse<any, any>) => {
+        return res?.data;
+      });
   } catch (error: any) {
     return error;
   }
@@ -163,7 +179,7 @@ export const deleteCard = async (cardID: string) => {
   try {
     return await axios
       .delete(`${url}/card/delete-card/${cardID}`)
-      .then((res) => {
+      .then((res: AxiosResponse<any, any>) => {
         return res?.data;
       });
   } catch (error: any) {
