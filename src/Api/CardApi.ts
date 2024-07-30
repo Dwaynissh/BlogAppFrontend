@@ -175,10 +175,10 @@ export const getBookmarks = async () => {
   }
 };
 
-export const deleteCard = async (cardID: string) => {
+export const deleteCard = async (userID: string, cardID: string) => {
   try {
     return await axios
-      .delete(`${url}/card/delete-card/${cardID}`)
+      .delete(`${url}/card/delete-card/${userID}/${cardID}`)
       .then((res: AxiosResponse<any, any>) => {
         return res?.data;
       });

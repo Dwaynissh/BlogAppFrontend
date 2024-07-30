@@ -1,19 +1,26 @@
 import { useEffect, useState } from "react";
 import moment from "moment";
 import { MdDelete } from "react-icons/md";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import CardTooltipProps from "../Components/Props/CardTooltipProps";
 import { FaBookmark, FaHeart } from "react-icons/fa";
-import { getBookmarks } from "../Api/CardApi";
-import { data } from "./data";
+import { deleteCard, getBookmarks } from "../Api/CardApi";
+import { jwtDecode } from "jwt-decode";
+import { useSelector } from "react-redux";
+import toast, { Toaster } from "react-hot-toast";
 
 const Liked = () => {
   const [card, setCard] = useState([]);
+  const userToken: any = useSelector((state: any) => state.user);
+
+  const decodedToken: any = jwtDecode(userToken);
+  const userID = decodedToken.id;
 
   useEffect(() => {
     getBookmarks().then((res: any) => {
       if (res && res.data) {
         setCard(res?.data[0].bookmark);
+        setCard(res.data);
       } else {
         console.log(res.message);
         setCard([]);
@@ -21,20 +28,14 @@ const Liked = () => {
     });
   }, []);
 
-  const removeBookmark = (cardID: any) => {
-    removeBookmark(cardID);
-    window.location.reload();
-  };
-
   return (
     <div className="w-full min-h-[100vh] bg-white pt-[40px] py-2 px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center lg:place-items-end">
+      <div>
+        <Toaster />
+      </div>
       {card.map((props: any) => (
-        <Link to={`${props._id}`} key={props._id} className="p-2">
-          <div
-            className="m-4 py-6 px-5 w-[95%] sm:w-[90%] md:w-[95%] lg:w-[90%] bg-gray-50 rounded-[12px] text-[purple] h-[455px] transition-all duration-[350ms] flex justify-center items-start flex-col border border-[purple] bxs"
-            // onMouseOver={() => setHover(false)}
-            // onMouseLeave={() => setHover(true)}
-          >
+        <div key={props._id} className="p-2">
+          <div className="m-4 py-6 px-5 w-[95%] sm:w-[90%] md:w-[95%] lg:w-[90%] bg-gray-50 rounded-[12px] text-[purple] h-[455px] transition-all duration-[350ms] flex justify-center items-start flex-col border border-[purple] bxs">
             <div className="w-full mt-3 mb-4 flex justify-between items-center">
               <div className="flex justify-center items-center gap-3">
                 <div className="p-2 bg-[purple] text-[white] text-[15px] rounded-full border border-[white] ">
@@ -43,7 +44,13 @@ const Liked = () => {
                 <div>{moment(props.createdAt).fromNow()}</div>
               </div>
 
-              <div>
+              <div
+                onClick={() => {
+                  deleteCard(userID, props?._id).then(() => {
+                    toast.success("Card Deleted Successfully");
+                  });
+                }}
+              >
                 <MdDelete className="text-[22px]" />
               </div>
             </div>
@@ -76,9 +83,6 @@ const Liked = () => {
                   textBg="text-blue-200"
                   hoverName="bookmark"
                   hoverBg="bg-[red]"
-                  onClick={() => {
-                    removeBookmark(props._id);
-                  }}
                 />
 
                 <CardTooltipProps
@@ -90,7 +94,7 @@ const Liked = () => {
               </div>
             </div>
           </div>
-        </Link>
+        </div>
       ))}
     </div>
   );

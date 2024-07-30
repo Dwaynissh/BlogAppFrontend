@@ -11,6 +11,7 @@ import { NavLink } from "react-router-dom";
 import CategoryProps from "../../Components/Props/CategoryProps";
 import ManageProps from "../../Components/Props/ManageProps";
 import OthersProps from "../../Components/Props/OthersProps";
+
 const DashSideBar = () => {
   const { toggle, handleToggle } = useContext(GlobalContext);
 

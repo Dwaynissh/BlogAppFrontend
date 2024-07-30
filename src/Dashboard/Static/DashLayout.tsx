@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { useContext } from "react";
 import { GlobalContext } from "../../Provider/ContextProvider";
-import DashSideBar from "../../Dashboard/Static/DashSideBar";
+import DashSideBar from "./DashSideBar";
 
 const DashLayout = () => {
   const { toggle } = useContext(GlobalContext);

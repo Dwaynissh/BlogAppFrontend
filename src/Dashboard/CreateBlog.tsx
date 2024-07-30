@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import DashHeader from "./Static/DashHeader";
 import { GlobalContext } from "../Provider/ContextProvider";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
@@ -8,6 +8,9 @@ import pix from "../assets/PrinceJohn.jpeg";
 import { createCard } from "../Api/CardApi";
 import { jwtDecode } from "jwt-decode";
 import { useSelector } from "react-redux";
+import { ClipLoader } from "react-spinners";
+import toast, { Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const CreateBlog = () => {
   const { toggle } = useContext(GlobalContext);
@@ -18,7 +21,9 @@ const CreateBlog = () => {
   const [description, setDescription] = useState<string>("");
   const [category, setCategory] = useState<string>("");
   const [content, setContent] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
   const userToken: any = useSelector((state: any) => state.user);
+  const navigate = useNavigate();
 
   const handleImage = (e: any) => {
     const file = e.target.files[0];
@@ -42,10 +47,14 @@ const CreateBlog = () => {
         category,
         content
       ).then((res) => {
+        setLoading(true);
+        toast.success("Successfully Created Blog");
         console.log("Card created:", res);
+        navigate("/fiction");
         return res.data;
       });
     } catch (error) {
+      toast.error("Incorrect Email or Password");
       console.log("Error creating card:", error);
     }
   };
@@ -60,13 +69,24 @@ const CreateBlog = () => {
         <DashHeader />
       </div>
       <div className="w-full py-[20px] px-[20px] min-h-[100vh] rounded-[30px] bg-white relative">
+        <Toaster />
         <div className="w-full mb-4 top-[0]">
-          <button
-            className="py-2 px-5 bg-[#696969] text-[17px] text-white rounded-md font-medium"
-            onClick={handleCreateCard}
-          >
-            Add Blog Post
-          </button>
+          {loading ? (
+            <button
+              className="py-2 px-5 bg-[#696969] text-[17px] text-white rounded-md font-medium flex justify-center items-center gap-2"
+              onClick={handleCreateCard}
+            >
+              <ClipLoader color={"#fff"} loading={loading} size={15} />
+              Adding Blog Post...
+            </button>
+          ) : (
+            <button
+              className="py-2 px-5 bg-[#696969] text-[17px] text-white rounded-md font-medium"
+              onClick={handleCreateCard}
+            >
+              Add Blog Post
+            </button>
+          )}
         </div>
         <div className="w-full py-[20px] pr-[20px] bg-gray-200 rounded-md grid md:grid-cols-3">
           <div className="h-full pl-[90px] md:pl-4 md:p-[10px] lg:p-[20px] ">

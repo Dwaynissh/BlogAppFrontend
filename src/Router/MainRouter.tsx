@@ -7,11 +7,11 @@ import Nonfiction from "../Dashboard/Nonfiction";
 import Religious from "../Dashboard/Religious";
 import Settings from "../Dashboard/Settings";
 import CreateBlog from "../Dashboard/CreateBlog";
-import DashLayout from "../Components/LayoutHolder/DashLayout";
+import DashLayout from "../Dashboard/Static/DashLayout";
 // import DataDetail from "../Dashboard/DetailsPage/DataDetail";
 // import DetailPage from "../Pages/DetailsPage/DetailPage";
-import Layout from "../Components/LayoutHolder/Layout";
-import Hero from "../Pages/Hero";
+// import Layout from "../Components/LayoutHolder/Layout";
+// import Hero from "../Pages/Hero";
 import Liked from "../Dashboard/Liked";
 import Login from "../Auth/Login";
 import Register from "../Auth/Register";
@@ -37,7 +37,7 @@ export const MainRouter = createBrowserRouter([
             element: <HomeScreen />,
           },
           {
-            path: "publish",
+            path: "/dashboard/publish",
             element: <CreateBlog />,
           },
           {
