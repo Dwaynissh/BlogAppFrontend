@@ -26,7 +26,7 @@ const Login = () => {
           setLoading(true);
           toast.success("Login Successfully, Welcome back 😊");
           dispatch(loginState(res?.data));
-          navigate("/dashboard");
+          navigate("/first-time");
         } else {
           toast.error("Incorrect Email or Password");
         }
