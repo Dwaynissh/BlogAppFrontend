@@ -209,7 +209,7 @@ const PageThree = () => {
     >
       <div className="mb-4 w-full">
         <div className="h-[10px] w-full bg-gray-300 rounded-[20px]">
-          <div className="h-full w-[100%] bg-[purple] rounded-l-[20px]" />
+          <div className="h-full w-[100%] bg-[purple] rounded-[20px]" />
         </div>
       </div>
       <div className="w-full">

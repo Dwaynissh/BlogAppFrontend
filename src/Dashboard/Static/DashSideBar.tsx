@@ -11,6 +11,7 @@ import { NavLink } from "react-router-dom";
 import CategoryProps from "../../Components/Props/CategoryProps";
 import ManageProps from "../../Components/Props/ManageProps";
 import OthersProps from "../../Components/Props/OthersProps";
+import logo from "../../assets/Logos/bloghavenblackcropped-removebg-preview.png";
 
 const DashSideBar = () => {
   const { toggle, handleToggle } = useContext(GlobalContext);
@@ -33,9 +34,13 @@ const DashSideBar = () => {
           <div
             className={`${
               toggle ? "text-[17px]" : "text-[25px]"
-            } transition-all duration-300 text-[white] pt-3 font-bold flex justify-center items-center`}
+            } transition-all duration-300 text-[white] pt-3 font-bold flex justify-start items-center`}
           >
-            MY BLOG
+            <img
+              src={logo}
+              alt=""
+              className="w-[90%] mt-3 h-[100px] object-contain"
+            />
           </div>
         </div>
 

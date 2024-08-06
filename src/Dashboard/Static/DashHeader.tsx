@@ -52,7 +52,7 @@ const DashHeader = () => {
           </NavLink>
           <div>
             <div
-              className=" border border-black rounded-full font-bold bg-gray-200 text-[#696969] cursor-pointer hover:scale-105"
+              className=" border border-black rounded-full font-bold bg-gray-200 text-[#696969] cursor-pointer scale-105 transition-all duration-300"
               onClick={handleDropdown}
             >
               <img
