@@ -55,7 +55,7 @@ const othersData: iNavs[] = [
 
 const HeaderMobileNavs = () => {
   return (
-    <div className="w-full">
+    <div className="w-full appear">
       <div className="p-2 w-full flex items-center justify-start gap-2 rounded-md text-white cursor-pointer">
         <h1 className="text-[20px] font-semibold">Category</h1>
       </div>

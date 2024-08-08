@@ -64,7 +64,7 @@ const HomeScreen = () => {
   //   addBookmark(cardID);
   // };
   return (
-    <div className="w-full min-h-[calc(100vh-70px)] pt-[30px] py-2 px-2">
+    <div className="w-full min-h-[calc(100vh-70px)] pt-[30px] py-2 px-2 appear">
       <div className="border p-2 w-full min-h-[100px] mb-3 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 rounded-md">
         <div className="border m-1 p-[20px] rounded-md  sm:block flex justify-center items-center gap-[40px] ">
           <div className="w-[50%] sm:w-full sm:block flex justify-between items-center">

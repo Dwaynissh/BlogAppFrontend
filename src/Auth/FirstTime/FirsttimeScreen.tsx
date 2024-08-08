@@ -13,6 +13,7 @@ import logo from "../../assets/Logos/bloghavenwhitecropped-removebg-preview.png"
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const PageOne = () => {
   const dispatch = useDispatch();
@@ -270,9 +271,15 @@ const FirsttimeScreen = () => {
   return (
     <div>
       <div className="w-full h-screen bg-gray-200 flex justify-center items-center flex-col">
-        <div className="mb-[25px] text-center">
-          <img src={logo} alt="" />
-          <div className="text-[18px]">
+        <div className="text-center">
+          <Link to="/">
+            <img
+              src={logo}
+              alt=""
+              className="h-[50px] mb-[30px] w-[500px] md:h-auto md:w-auto object-contain"
+            />
+          </Link>
+          <div className="text-[18px] mb-[20px]">
             You are welcome to{" "}
             <span className="text-[#100a05] font-bold">BlogHaven</span>
           </div>

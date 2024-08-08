@@ -52,7 +52,7 @@ const Liked = () => {
   };
 
   return (
-    <div className="w-full min-h-[100vh] bg-white pt-[20px] py-2 px-2 ">
+    <div className="w-full min-h-[100vh] bg-white pt-[20px] py-2 px-2 appear">
       <div className="w-full mb-5 flex justify-start items-center">
         <LittleNav name="Liked" />
       </div>

@@ -1,6 +1,6 @@
 const Settings = () => {
   return (
-    <div className="w-full bg-white rounded-[20px] min-h-[100vh]  flex justify-start items-center flex-col">
+    <div className="w-full bg-white rounded-[20px] min-h-[100vh]  flex justify-start items-center flex-col appear">
       Settings
     </div>
   );

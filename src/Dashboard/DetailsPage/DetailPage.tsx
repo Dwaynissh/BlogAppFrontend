@@ -17,7 +17,7 @@ const DetailPage = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-screen rounded-[30px] pt-[20px] py-2 px-2 bg-white">
+    <div className="w-full min-h-screen rounded-[30px] pt-[20px] py-2 px-2 bg-white appear">
       <div>
         <div className="w-full flex justify-center items-center">
           <div className="w-[90%] md:w-[95%] lg:w-[90%] flex justify-center items-start flex-col gap-3 transition-all duration-[350ms]">

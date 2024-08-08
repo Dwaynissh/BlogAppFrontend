@@ -59,7 +59,7 @@ const CreateBlog = () => {
   };
 
   return (
-    <div className="w-full py-[20px] px-[20px] min-h-[100vh] rounded-[30px] bg-white relative">
+    <div className="w-full py-[20px] px-[20px] min-h-[100vh] rounded-[30px] bg-white relative appear">
       <Toaster />
       <div className="w-full mb-4 top-[0]">
         {loading ? (
