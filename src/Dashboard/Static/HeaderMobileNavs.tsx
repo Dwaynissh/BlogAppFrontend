@@ -62,7 +62,7 @@ const HeaderMobileNavs = () => {
       <div className="mb-4">
         {categoryData.map((props: iNavs) => (
           <Link to={props.url}>
-            <div className="p-2 w-full flex items-center justify-start gap-2 rounded-md text-white hover:bg-white cursor-pointer text-[18px] hover:text-[#696969] ">
+            <div className="p-2 w-full flex items-center justify-start gap-2 rounded-md text-white hover:bg-white cursor-pointer text-[18px] hover:text-[#100a05] ">
               <div>{props.icon}</div>
               <h1>{props.routeName}</h1>
             </div>
@@ -75,7 +75,7 @@ const HeaderMobileNavs = () => {
       <div className="mb-4">
         {manageData.map((props: iNavs) => (
           <Link to={props.url} className="">
-            <div className="p-2 w-full flex items-center justify-start gap-2 rounded-md text-white hover:bg-white cursor-pointer text-[18px] hover:text-[#696969]">
+            <div className="p-2 w-full flex items-center justify-start gap-2 rounded-md text-white hover:bg-white cursor-pointer text-[18px] hover:text-[#100a05]">
               <div>{props.icon}</div>
               <h1>{props.routeName}</h1>
             </div>
@@ -87,7 +87,7 @@ const HeaderMobileNavs = () => {
       </div>
       {othersData.map((props: iNavs) => (
         <Link to={props.url}>
-          <div className="p-2 w-full flex items-center justify-start gap-2 rounded-md text-white hover:bg-white cursor-pointer text-[18px] hover:text-[#696969]">
+          <div className="p-2 w-full flex items-center justify-start gap-2 rounded-md text-white hover:bg-white cursor-pointer text-[18px] hover:text-[#100a05]">
             <div>{props.icon}</div>
             <h1>{props.routeName}</h1>
           </div>

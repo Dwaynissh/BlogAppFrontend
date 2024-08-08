@@ -101,7 +101,7 @@ const HomeScreen = () => {
         <fieldset
           className={`border min-h-[45px] w-[50%] lg:w-[35%] xl:w-[30%] ${
             isClicked
-              ? "border-[#696969] text-[#696969]"
+              ? "border-[#100a05] text-[#100a05]"
               : "border-gray-300 text-gray-300"
           }`}
           onClick={() => setIsClicked(true)}
@@ -121,10 +121,10 @@ const HomeScreen = () => {
         {filteredCards.length > 0 ? (
           filteredCards.map((props: any) => (
             <div key={props._id} className="p-2">
-              <div className="m-4 py-6 px-5 w-[95%] sm:w-[90%] md:w-[95%] lg:w-[98%] bg-gray-50 rounded-[12px] text-[purple] h-[455px] transition-all duration-[350ms] flex justify-center items-start flex-col border border-[purple]">
+              <div className="m-4 py-6 px-5 w-[95%] sm:w-[90%] md:w-[95%] lg:w-[98%] bg-gray-50 rounded-[12px] text-[#100a05] h-[455px] transition-all duration-[350ms] flex justify-center items-start flex-col border border-[#100a05]">
                 <div className="w-full mt-3 mb-4 flex justify-between items-center">
                   <div className="flex justify-center items-center gap-3">
-                    <div className="p-2 bg-[purple] text-[white] text-[15px] rounded-full border border-[white] ">
+                    <div className="p-2 bg-[#100a05] text-[white] text-[15px] rounded-full border border-[white] ">
                       {props.category}
                     </div>
                     <div>{moment(props.createdAt).fromNow()}</div>

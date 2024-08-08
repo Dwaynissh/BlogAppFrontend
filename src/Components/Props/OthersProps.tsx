@@ -29,7 +29,7 @@ const OthersProps: FC<iOthersProps> = ({ name, name2, icon, icon2, url }) => {
           to={url}
           className={({ isActive }) =>
             isActive
-              ? "w-full pl-2 mb-2 py-2 flex justify-start items-center gap-3 cursor-pointer text-[19px] font-semibold transition-all duration-[350ms] bg-white rounded-l-md text-[#696969]"
+              ? "w-full pl-2 mb-2 py-2 flex justify-start items-center gap-3 cursor-pointer text-[19px] font-semibold transition-all duration-[350ms] bg-white rounded-l-md text-[#100a05]"
               : "w-full pl-2 mb-2 py-2 flex justify-start items-center gap-3 cursor-pointer text-[19px] font-semibold transition-all duration-[350ms] hover:rounded-md text-[white]"
           }
         >

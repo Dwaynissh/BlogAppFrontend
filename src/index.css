@@ -15,26 +15,15 @@
 .bxs {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+.whitish {
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+}
 
 .vsm {
   @media screen and (max-width: 500px) {
     height: 300px;
     overflow-x: auto;
   }
-}
-
-.allth table,
-tr,
-th,
-td {
-  border-bottom: 1px solid silver;
-  border-collapse: collapse;
-  padding: 25px 10px;
-  text-align: center;
-}
-
-.allth2 th {
-  background-color: rgb(156, 91, 91);
 }
 
 ::-webkit-scrollbar {
@@ -72,4 +61,9 @@ td {
 }
 .bounce {
   animation: bounce 3s infinite;
+}
+
+.bacc {
+  background-image: url(./assets/custombg.png);
+  background-size: cover;
 }

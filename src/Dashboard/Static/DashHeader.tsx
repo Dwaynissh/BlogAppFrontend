@@ -45,14 +45,14 @@ const DashHeader = () => {
             to="publish"
             className={({ isActive }) => (isActive ? "" : "")}
           >
-            <button className="py-3 px-3 bg-gray-200 text-[#696969] rounded-[10px] font-semibold shadow-md flex justify-center items-center gap-2 scale-100">
+            <button className="py-2 px-2 text-[12px] md:text-[15px] md:py-3 md:px-3 bg-gray-200 text-[#100a05] rounded-[10px] font-semibold shadow-md flex justify-center items-center gap-2 scale-100">
               publish a post
               <MdCreate className="" />
             </button>
           </NavLink>
           <div>
             <div
-              className=" border border-black rounded-full font-bold bg-gray-200 text-[#696969] cursor-pointer scale-105 transition-all duration-300"
+              className=" border border-black rounded-full font-bold bg-gray-200 text-[#100a05] cursor-pointer scale-105 transition-all duration-300"
               onClick={handleDropdown}
             >
               <img
@@ -77,10 +77,10 @@ const DashHeader = () => {
                   animate="visible"
                   exit="hidden"
                   variants={menuVariants}
-                  className="fixed top-[70px] right-0 py-[40px] px-4 bg-[#696969] h-[calc(100vh-70px)] flex justify-start items-start flex-col z-50"
+                  className="fixed top-[70px] right-0 py-[40px] px-4 bg-[#100a05] h-[calc(100vh-70px)] flex justify-start items-start flex-col z-50"
                 >
                   <Link to="/dashboard" className="w-full">
-                    <div className="p-2 mb-4 w-full flex items-center justify-start gap-2 rounded-md text-white hover:bg-white cursor-pointer text-[18px] hover:text-[#696969]">
+                    <div className="p-2 mb-4 w-full flex items-center justify-start gap-2 rounded-md text-white hover:bg-white cursor-pointer text-[18px] hover:text-[#100a05]">
                       <MdFeed />
                       <h1>My Feed</h1>
                     </div>
@@ -89,7 +89,7 @@ const DashHeader = () => {
                   <div className="flex-1" />
                   <div className="mb-3 w-full border" />
                   <div
-                    className="p-2 w-full flex items-center justify-start gap-2 rounded-md text-white hover:bg-white cursor-pointer text-[18px] hover:text-[#696969]"
+                    className="p-2 w-full flex items-center justify-start gap-2 rounded-md text-white hover:bg-white cursor-pointer text-[18px] hover:text-[#100a05]"
                     onClick={() => {
                       dispatch(logoutState());
                       logoutUser();
@@ -116,8 +116,8 @@ const DashHeader = () => {
             className="p-3 mb-2 min-w-[150px] min-h-[100px] bxs bg-white absolute top-[65px] right-[10px] rounded-lg z-20"
           >
             <div>
-              <div className="mb-2 h-[40px] bg-[#696969] rounded-sm flex justify-center items-center relative">
-                <div className="w-[20%] px-2 py-[3px] absolute bottom-[-10px] flex justify-center items-center rounded-full border border-[#696969] bg-white">
+              <div className="mb-2 h-[40px] bg-[#100a05] rounded-sm flex justify-center items-center relative">
+                <div className="w-[20%] px-2 py-[3px] absolute bottom-[-10px] flex justify-center items-center rounded-full border border-[#100a05] bg-white">
                   PJ
                 </div>
               </div>
