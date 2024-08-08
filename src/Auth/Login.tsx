@@ -56,11 +56,11 @@ const Login = () => {
         data-aos="fade-left"
       >
         <div className="pb-5 w-full flex justify-center items-center">
-          <div className="text-[purple] text-[20px] font-bold capitalize">
+          <div className="text-[#100a05] text-[20px] font-bold capitalize">
             Login to your Account here
           </div>
         </div>
-        <div className="mb-3 text-[purple] font-semibold">Email</div>
+        <div className="mb-3 text-[#100a05] font-semibold">Email</div>
 
         <input
           type="email"
@@ -72,7 +72,7 @@ const Login = () => {
           }}
         />
 
-        <div className="mb-3 text-[purple] font-semibold">Password</div>
+        <div className="mb-3 text-[#100a05] font-semibold">Password</div>
         <div className="bg-gray-100 pr-2 flex items-center justify-center">
           <input
             type={isVisible ? "text" : "password"}
@@ -85,12 +85,12 @@ const Login = () => {
           />
           {isVisible ? (
             <FiEye
-              className=" text-[purple] ml-3 text-[18px] font-semibold"
+              className=" text-[#100a05] ml-3 text-[18px] font-semibold"
               onClick={passwordVisibility}
             />
           ) : (
             <AiOutlineEyeInvisible
-              className=" text-[purple] ml-3 text-[18px] font-semibold"
+              className=" text-[#100a05] ml-3 text-[18px] font-semibold"
               onClick={passwordVisibility}
             />
           )}
@@ -98,7 +98,7 @@ const Login = () => {
         <div className="mt-5 w-full">
           {loading ? (
             <button
-              className="py-2 px-5 w-full bg-[purple] text-white text-[16px] shadow-sm rounded-md flex items-center justify-center gap-2"
+              className="py-2 px-5 w-full bg-[#100a05] text-white text-[16px] shadow-sm rounded-md flex items-center justify-center gap-2"
               onClick={onhandleSubmit}
             >
               <ClipLoader color={"#fff"} loading={loading} size={20} />
@@ -106,7 +106,7 @@ const Login = () => {
             </button>
           ) : (
             <button
-              className="py-2 px-5 w-full text-[16px] bg-[purple] text-white shadow-sm rounded-md"
+              className="py-2 px-5 w-full text-[16px] bg-[#100a05] text-white shadow-sm rounded-md"
               onClick={onhandleSubmit}
             >
               Login
@@ -114,7 +114,7 @@ const Login = () => {
           )}
         </div>
         <Link to="/register">
-          <div className="mt-3 text-center text-[purple]">Register Here</div>
+          <div className="mt-3 text-center text-[#100a05]">Register Here</div>
         </Link>
       </div>
     </div>

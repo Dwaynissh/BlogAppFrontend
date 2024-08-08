@@ -16,9 +16,9 @@ const Hero = () => {
 
   return (
     <div
-      className={`w-full ${
+      className={`w-full appear ${
         menu ? "pt-[150px]" : "pt-[70px]"
-      } min-h-[100vh] flex justify-center items-center flex-col transition-all duration-[350ms]`}
+      } min-h-[100vh] flex justify-center items-center flex-col transition-all duration-[350ms] `}
     >
       <div className="w-[92%] md:w-[90%] h-full grid grid-cols-1 lg:grid-cols-2 bg-white">
         <div className="h-full pt-[50px]">
@@ -28,17 +28,17 @@ const Hero = () => {
             </button>
           </div>
           <div className="my-[20px]">
-            <h1 className="text-[40px] md:text-[50px] lg:[75px] text-[#100a05]  font-bold">
+            <h1 className="text-[40px] md:text-[50px] xl:text-[60px] text-[#100a05] font-bold">
               The Ultimate Blog Tool for Authors, Business, and Everyone
             </h1>
           </div>
           <div className="my-[20px]">
-            <h3 className="text-[18px]">
+            <h3 className="text-[18px] xl:text-[22px] ">
               Build customer relationships with Blog tools that can accommodate
               all needs and are also integrated and accessible by everyone!
             </h3>
           </div>
-          <div className="my-5 block md:flex justify-start items-center gap-[25px]">
+          <div className="mt-6 block md:flex justify-start items-center gap-[25px]">
             <button className="py-2 px-5 md:px-8 mb-4 md:mb-0 w-full md:w-auto shadow-lg md:text-[19px] rounded-lg font-semibold hover:scale-100 bg-[#100a05] text-white transition-all duration-[500ms] cursor-auto">
               Start a Free Trial
             </button>
@@ -60,12 +60,12 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="h-full pt-[50px]">
-          <div className="w-[90%] h-[90%]">
+        <div className="h-full pb-[50px]">
+          <div className="w-[90%] lg:w-[100%] h-[90%] lg:h-[100%]">
             <img
               src={heroimg}
               alt=""
-              className="w-full h-full object-center bounce"
+              className="w-full h-full object-cover bounce"
             />
           </div>
         </div>
@@ -130,7 +130,7 @@ const Hero = () => {
       <div className="w-full min-h-[100vh] pb-[100px] mb-[40px] bg-[#100a05] bacc flex justify-center items-center flex-col">
         <div className="w-[92%] py-[60px]">
           <div className="lg:flex items-center">
-            <div className="h-[400px] lg:w-[1400px]">
+            <div className="h-[400px] lg:w-[1400px] appear">
               <div className="my-[40px] md:flex justify-start items-center gap-[10px]">
                 <div className="text-white w-full mb-4 md:mb-0 md:w-[25%] cursor-pointer transition-all duration-300">
                   <div className="mb-2">Blog Sales😊</div>
