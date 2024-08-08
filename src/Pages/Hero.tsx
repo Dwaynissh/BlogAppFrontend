@@ -71,7 +71,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="w-[92%] min-h-[100px] flex justify-center items-center">
-        <div className="w-[100%] mb-[40px] md:w-[90%] lg:w-[50%]">
+        <div className="w-[100%] mb-[40px] md:w-[90%] lg:w-[80%] xl:w-[67%]">
           <div className="text-center my-[30px]">
             <h1 className="text-[22px] md:text-[28px] font-bold text-[#100a05]">
               Loved by all, trusted by authors, businesses
@@ -81,42 +81,45 @@ const Hero = () => {
           {/* Marquee */}
           <div className="">
             <Marquee>
-              <div className="h-[50px] ml-[30px]">
+              <div className="h-[50px]" style={{ marginLeft: "40px" }}>
                 <img
                   src={tiktok}
                   alt=""
                   className="w-[120px] h-full object-contain"
                 />
               </div>
-              <div className="h-[50px]">
+              <div className="h-[50px]" style={{ marginLeft: "40px" }}>
                 <img
                   src={mono}
                   alt=""
                   className="w-[120px] h-full object-contain"
                 />
               </div>
-              <div className="h-[50px]">
+              <div className="h-[50px]" style={{ marginLeft: "40px" }}>
                 <img
                   src={hootsuite}
                   alt=""
                   className="w-[120px] h-full object-contain"
                 />
               </div>
-              <div className="h-[50px]">
+              <div className="h-[50px]" style={{ marginLeft: "40px" }}>
                 <img
                   src={palmpay}
                   alt=""
                   className="w-[120px] h-full object-contain"
                 />
               </div>
-              <div className="h-[50px]">
+              <div className="h-[50px]" style={{ marginLeft: "40px" }}>
                 <img
                   src={paystack}
                   alt=""
                   className="w-[120px] h-full object-contain"
                 />
               </div>
-              <div className="h-[50px] md:hidden">
+              <div
+                className="h-[50px] md:hidden"
+                style={{ marginLeft: "40px" }}
+              >
                 <img
                   src={teamapt}
                   alt=""

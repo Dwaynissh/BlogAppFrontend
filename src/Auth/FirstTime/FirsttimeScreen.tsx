@@ -9,6 +9,7 @@ import {
 } from "../../Redux/ReduxState";
 import { useSelector } from "react-redux";
 import { IoHandLeftOutline } from "react-icons/io5";
+import logo from "../../assets/Logos/bloghavenwhitecropped-removebg-preview.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useNavigate } from "react-router-dom";
@@ -41,7 +42,7 @@ const PageOne = () => {
     >
       <div className="mb-4 w-full">
         <div className="h-[10px] w-full bg-gray-300 rounded-[20px]">
-          <div className="h-full w-[33%] bg-[purple] rounded-l-[20px]" />
+          <div className="h-full w-[33%] bg-[#100a05] rounded-l-[20px]" />
         </div>
       </div>
       <div className="w-full">
@@ -52,7 +53,7 @@ const PageOne = () => {
         </div>
         <div className="mb-4">
           <h1 className="font-medium">
-            <span className="text-[purple]">•</span> Your Full Name
+            <span className="text-[#100a05]">•</span> Your Full Name
           </h1>
         </div>
         <div className="mb-4">
@@ -67,7 +68,7 @@ const PageOne = () => {
         </div>
         <div className="mb-4">
           <h1 className="font-medium">
-            <span className="text-[purple]">•</span> Your Gender
+            <span className="text-[#100a05]">•</span> Your Gender
           </h1>
           <select
             name="gender"
@@ -92,7 +93,7 @@ const PageOne = () => {
           {formIsFilled ? (
             <button
               onClick={handleDispatch}
-              className="py-2 px-6 text-[16px] bg-[purple] text-white rounded-md"
+              className="py-2 px-6 text-[16px] bg-[#100a05] text-white rounded-md"
             >
               Next
             </button>
@@ -136,7 +137,7 @@ const PageTwo = () => {
     >
       <div className="mb-4 w-full">
         <div className="h-[10px] w-full bg-gray-300 rounded-[20px]">
-          <div className="h-full w-[66%] bg-[purple] rounded-l-[20px]" />
+          <div className="h-full w-[66%] bg-[#100a05] rounded-l-[20px]" />
         </div>
       </div>
       <div className="w-full">
@@ -147,7 +148,7 @@ const PageTwo = () => {
         </div>
         <div className="mb-4">
           <h1 className="font-medium">
-            <span className="text-[purple]">•</span> Your Bio
+            <span className="text-[#100a05]">•</span> Your Bio
           </h1>
         </div>
         <div className="mb-4">
@@ -166,7 +167,7 @@ const PageTwo = () => {
           {formIsFilled ? (
             <button
               onClick={handleDispatch}
-              className="py-2 px-6 text-[16px] bg-[purple] text-white rounded-md"
+              className="py-2 px-6 text-[16px] bg-[#100a05] text-white rounded-md"
             >
               Next
             </button>
@@ -209,7 +210,7 @@ const PageThree = () => {
     >
       <div className="mb-4 w-full">
         <div className="h-[10px] w-full bg-gray-300 rounded-[20px]">
-          <div className="h-full w-[100%] bg-[purple] rounded-[20px]" />
+          <div className="h-full w-[100%] bg-[#100a05] rounded-[20px]" />
         </div>
       </div>
       <div className="w-full">
@@ -245,7 +246,7 @@ const PageThree = () => {
           {formIsFilled ? (
             <button
               onClick={handleDispatch}
-              className="py-2 px-6 text-[16px] bg-[purple] text-white rounded-md"
+              className="py-2 px-6 text-[16px] bg-[#100a05] text-white rounded-md"
             >
               Next
             </button>
@@ -270,10 +271,11 @@ const FirsttimeScreen = () => {
     <div>
       <div className="w-full h-screen bg-gray-200 flex justify-center items-center flex-col">
         <div className="mb-[25px] text-center">
-          <div className="text-[30px] md:text-[45px] mb-4 upppercase italic font-extrabold text-[purple]">
-            DwayneBlogApp⁜
+          <img src={logo} alt="" />
+          <div className="text-[18px]">
+            You are welcome to{" "}
+            <span className="text-[#100a05] font-bold">BlogHaven</span>
           </div>
-          <div className="text-[18px]">You are welcome to BlogApp</div>
         </div>
         {page === 1 ? (
           <PageOne />

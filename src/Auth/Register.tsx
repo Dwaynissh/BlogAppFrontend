@@ -15,6 +15,8 @@ const Register = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const navigate = useNavigate();
 
+  const registerDetails = email && password;
+
   const onhandleSubmit = async (e: any) => {
     e.preventDefault();
     setLoading(true);
@@ -92,22 +94,22 @@ const Register = () => {
           )}
         </div>
         <div className="mt-5 w-full">
-          {loading ? (
-            <button
-              className="py-2 px-5 w-full bg-[#100a05] text-white text-[16px] shadow-sm rounded-md flex items-center justify-center gap-2"
-              onClick={onhandleSubmit}
-            >
-              <ClipLoader color={"#fff"} loading={loading} size={20} />
-              Submitting...
-            </button>
-          ) : (
-            <button
-              className="py-2 px-5 w-full text-[16px] bg-[#100a05] text-white shadow-sm rounded-md"
-              onClick={onhandleSubmit}
-            >
-              Submit
-            </button>
-          )}
+          <button
+            className={`py-2 px-5 w-full bg-[#100a05] text-white text-[16px] shadow-sm rounded-md flex items-center justify-center gap-2 ${
+              loading || !registerDetails ? "cursor-not-allowed" : ""
+            }`}
+            onClick={onhandleSubmit}
+            disabled={loading || !registerDetails}
+          >
+            {loading ? (
+              <>
+                <ClipLoader color={"#fff"} loading={loading} size={20} />
+                Subitting...
+              </>
+            ) : (
+              "Submit"
+            )}
+          </button>
         </div>
         <Link to="/login">
           <div className="mt-3 text-center text-[#100a05]">Login Here</div>

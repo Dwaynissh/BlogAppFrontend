@@ -18,6 +18,8 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const loginDetails = email && password;
+
   const onhandleSubmit = async (e: any) => {
     e.preventDefault();
     try {
@@ -96,22 +98,22 @@ const Login = () => {
           )}
         </div>
         <div className="mt-5 w-full">
-          {loading ? (
-            <button
-              className="py-2 px-5 w-full bg-[#100a05] text-white text-[16px] shadow-sm rounded-md flex items-center justify-center gap-2"
-              onClick={onhandleSubmit}
-            >
-              <ClipLoader color={"#fff"} loading={loading} size={20} />
-              Login you in...
-            </button>
-          ) : (
-            <button
-              className="py-2 px-5 w-full text-[16px] bg-[#100a05] text-white shadow-sm rounded-md"
-              onClick={onhandleSubmit}
-            >
-              Login
-            </button>
-          )}
+          <button
+            className={`py-2 px-5 w-full bg-[#100a05] text-white text-[16px] shadow-sm rounded-md flex items-center justify-center gap-2 ${
+              loading || !loginDetails ? "cursor-not-allowed" : ""
+            }`}
+            onClick={onhandleSubmit}
+            disabled={loading || !loginDetails}
+          >
+            {loading ? (
+              <>
+                <ClipLoader color={"#fff"} loading={loading} size={20} />
+                Logging you in...
+              </>
+            ) : (
+              "Login"
+            )}
+          </button>
         </div>
         <Link to="/register">
           <div className="mt-3 text-center text-[#100a05]">Register Here</div>
