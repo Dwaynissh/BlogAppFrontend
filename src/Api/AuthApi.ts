@@ -26,6 +26,45 @@ export const loginUser = async (email: string, password: string) => {
   }
 };
 
+export const createProfile = async (
+  userID: any,
+  fullName: string,
+  gender: string,
+  bio: string,
+  profession: string
+) => {
+  try {
+    return await axios
+      .post(`${url}/create-profile/${userID}`, {
+        fullName,
+        gender,
+        bio,
+        profession,
+      })
+      .then((res: AxiosResponse<any, any>) => {
+        console.log("Api checking Profile response", res?.data);
+        return res?.data;
+      });
+  } catch (error) {
+    console.error();
+    return error;
+  }
+};
+
+export const getOneUser = async (userID: any) => {
+  try {
+    return await axios
+      .get(`${url}/get-one-user/${userID}`)
+      .then((res: AxiosResponse<any, any>) => {
+        console.log("Reading User data", res.data);
+        return res.data;
+      });
+  } catch (error) {
+    console.error();
+    return error;
+  }
+};
+
 export const readUserCookie = async () => {
   try {
     return await axios

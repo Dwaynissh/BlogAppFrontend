@@ -9,6 +9,7 @@ const initialState = {
     profession: "",
   },
   page: 1,
+  firstLogin: false,
 };
 
 const ReduxState = createSlice({
@@ -39,6 +40,20 @@ const ReduxState = createSlice({
     prevpage: (state) => {
       state.page -= 1;
     },
+    updateLogin: (state) => {
+      state.firstLogin = true;
+    },
+    clearstate: (state) => {
+      state.page = 1;
+      state.user = null;
+      state.firstLogin = false;
+      state.profileDetails = {
+        fullName: "",
+        gender: "",
+        bio: "",
+        profession: "",
+      };
+    },
     logoutState: (state) => {
       state.user = null;
     },
@@ -54,6 +69,8 @@ export const {
   mainPage,
   nextpage,
   prevpage,
+  updateLogin,
+  clearstate,
   logoutState,
 } = ReduxState.actions;
 

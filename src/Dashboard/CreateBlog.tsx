@@ -29,6 +29,8 @@ const CreateBlog = () => {
     setAvatar(readyimage);
   };
 
+  const blogData = title && author && description && category && content;
+
   const decodedToken: any = jwtDecode(userToken);
   const userID = decodedToken.id;
 
@@ -62,22 +64,22 @@ const CreateBlog = () => {
     <div className="w-full py-[20px] px-[20px] min-h-[100vh] rounded-[30px] bg-white relative appear">
       <Toaster />
       <div className="w-full mb-4 top-[0]">
-        {loading ? (
-          <button
-            className="py-2 px-5 bg-[#696969] text-[17px] text-white rounded-md font-medium flex justify-center items-center gap-2"
-            onClick={handleCreateCard}
-          >
-            <ClipLoader color={"#fff"} loading={loading} size={15} />
-            Adding Blog Post...
-          </button>
-        ) : (
-          <button
-            className="py-2 px-5 bg-[#696969] text-[17px] text-white rounded-md font-medium"
-            onClick={handleCreateCard}
-          >
-            Add Blog Post
-          </button>
-        )}
+        <button
+          className={`py-2 px-5 bg-[#696969] text-[17px] text-white rounded-md font-medium flex justify-center items-center gap-2 ${
+            loading || !blogData ? "cursor-not-allowed" : "cursor-pointer"
+          }`}
+          onClick={handleCreateCard}
+          disabled={loading || !blogData}
+        >
+          {loading ? (
+            <>
+              <ClipLoader color={"#fff"} loading={loading} size={15} />
+              Submitting...
+            </>
+          ) : (
+            "Add a Blog Post"
+          )}
+        </button>
       </div>
       <div className="w-full py-[20px] pr-[20px] bg-gray-200 rounded-md grid md:grid-cols-3">
         <div className="h-full pl-[90px] md:pl-4 md:p-[10px] lg:p-[20px] ">

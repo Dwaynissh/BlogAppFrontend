@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "../Components/LayoutHolder/Layout";
 import Hero from "../Pages/Hero";
 import PrivateRouter from "./PrivateRouter";
-import DashLayout from "../Dashboard/Static/DashLayout";
 import HomeScreen from "../Dashboard/HomeScreen";
 import Adventure from "../Dashboard/Adventure";
 import Fiction from "../Dashboard/Fiction";
@@ -18,6 +17,7 @@ import Verify from "../Auth/Verify";
 import WelcomeAlert from "../Auth/WelcomeAlert";
 import FirsttimeScreen from "../Auth/FirstTime/FirsttimeScreen";
 import CreateBlog from "../Dashboard/CreateBlog";
+import RouteChecker from "./RouteChecker";
 
 export const MainRouter = createBrowserRouter([
   {
@@ -34,7 +34,7 @@ export const MainRouter = createBrowserRouter([
     path: "/dashboard",
     element: (
       <PrivateRouter>
-        <DashLayout />
+        <RouteChecker />
       </PrivateRouter>
     ),
     children: [

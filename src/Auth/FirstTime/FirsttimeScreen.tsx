@@ -14,6 +14,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
+import { createProfile } from "../../Api/AuthApi";
 
 const PageOne = () => {
   const dispatch = useDispatch();
@@ -190,12 +192,33 @@ const PageThree = () => {
   const dispatch = useDispatch();
   const [profession, setProfession] = useState("");
   const navigate = useNavigate();
+  const profileData = useSelector((state: any) => state.profileDetails);
+  const user = useSelector((state: any) => state.user);
+
+  const decodeUserID: any = jwtDecode(user);
+  const userID = decodeUserID.id;
+
+  const userName = profileData.fullName;
+  const userGender = profileData.gender;
+  const userBio = profileData.bio;
 
   const formIsFilled = profession;
 
   const handleDispatch = () => {
     dispatch(professionState(profession));
-    navigate("/dashboard");
+    try {
+      createProfile(userID, userName, userGender, userBio, profession).then(
+        (res) => {
+          if (res.status === 201) {
+            navigate("/dashboard");
+            return res.data;
+          }
+        }
+      );
+    } catch (error) {
+      console.log(error);
+    }
+    clearTimeout;
   };
 
   useEffect(() => {
@@ -239,6 +262,7 @@ const PageThree = () => {
             <option value="Blogger">Blogger</option>
             <option value="Teacher">Teacher</option>
             <option value="Student">Student</option>
+            <option value="Software Developer">Software Developer</option>
             <option value="Other">Other</option>
           </select>
         </div>

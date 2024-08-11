@@ -12,6 +12,7 @@ import CategoryProps from "../../Components/Props/CategoryProps";
 import ManageProps from "../../Components/Props/ManageProps";
 import OthersProps from "../../Components/Props/OthersProps";
 import logo from "../../assets/Logos/bloghavenblackcropped-removebg-preview.png";
+import { Link } from "react-router-dom";
 
 const DashSideBar = () => {
   const { toggle, handleToggle } = useContext(GlobalContext);
@@ -36,11 +37,13 @@ const DashSideBar = () => {
               toggle ? "text-[17px]" : "text-[25px]"
             } transition-all duration-300 text-[white] pt-3 font-bold flex justify-start items-center`}
           >
-            <img
-              src={logo}
-              alt=""
-              className="w-[90%] mt-3 h-[100px] object-contain"
-            />
+            <Link to="/">
+              <img
+                src={logo}
+                alt=""
+                className="w-[90%] mt-3 h-[100px] object-contain"
+              />
+            </Link>
           </div>
         </div>
 

@@ -6,9 +6,10 @@ import toast, { Toaster } from "react-hot-toast";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { FiEye } from "react-icons/fi";
 import { useDispatch } from "react-redux";
-import { loginState } from "../Redux/ReduxState";
+import { clearstate, loginState } from "../Redux/ReduxState";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useSelector } from "react-redux";
 
 const Login = () => {
   const [email, setEmail] = useState<string>("");
@@ -22,22 +23,27 @@ const Login = () => {
 
   const onhandleSubmit = async (e: any) => {
     e.preventDefault();
-    try {
-      loginUser(email, password).then((res) => {
-        if (res?.status === 200) {
-          setLoading(true);
-          toast.success("Login Successfully, Welcome back 😊");
-          dispatch(loginState(res?.data));
-          navigate("/first-time");
-        } else {
-          toast.error("Incorrect Email or Password");
-        }
-      });
-    } catch (error) {
-      console.log("Error in onhandleSubmit", error);
-    } finally {
-      setLoading(false);
-    }
+    setLoading(true);
+
+    setTimeout(() => {
+      try {
+        loginUser(email, password).then((res) => {
+          if (res?.status === 200) {
+            toast.success("Login Successfully, Welcome back 😊");
+            dispatch(loginState(res?.data));
+            navigate("/first-time");
+          } else {
+            toast.error("Incorrect Email or Password");
+          }
+        });
+      } catch (error) {
+        console.log("Error in onhandleSubmit", error);
+      } finally {
+        setLoading(false);
+      }
+
+      clearTimeout;
+    }, 2000);
   };
 
   const passwordVisibility = () => {
@@ -48,6 +54,7 @@ const Login = () => {
     AOS.init({
       duration: 1200,
     });
+    // dispatch(clearstate());
   }, []);
 
   return (
