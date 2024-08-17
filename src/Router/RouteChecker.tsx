@@ -6,14 +6,11 @@ import { useDispatch } from "react-redux";
 import { updateLogin } from "../Redux/ReduxState";
 import DashLayout from "../Dashboard/Static/DashLayout";
 import FirsttimeScreen from "../Auth/FirstTime/FirsttimeScreen";
-import { RootState } from "../Redux/Store";
 
 const RouteChecker = () => {
   const dispatch = useDispatch();
   const user = useSelector((state: any) => state.user);
-  const checkingFirstlogin = useSelector(
-    (state: RootState) => state.firstLogin
-  );
+  const checkingFirstlogin = useSelector((state: any) => state.firstLogin);
   const decodeUserID: any = jwtDecode(user);
   const userID = decodeUserID.id;
 

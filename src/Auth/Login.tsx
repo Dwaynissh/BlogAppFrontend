@@ -6,10 +6,9 @@ import toast, { Toaster } from "react-hot-toast";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { FiEye } from "react-icons/fi";
 import { useDispatch } from "react-redux";
-import { clearstate, loginState } from "../Redux/ReduxState";
+import { loginState } from "../Redux/ReduxState";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useSelector } from "react-redux";
 
 const Login = () => {
   const [email, setEmail] = useState<string>("");
@@ -29,9 +28,14 @@ const Login = () => {
       try {
         loginUser(email, password).then((res) => {
           if (res?.status === 200) {
+            console.log("Login code res", res.data);
             toast.success("Login Successfully, Welcome back 😊");
             dispatch(loginState(res?.data));
-            navigate("/first-time");
+            if (res?.login.firstlogin === true) {
+              navigate("/dashboard");
+            } else {
+              navigate("/first-time");
+            }
           } else {
             toast.error("Incorrect Email or Password");
           }

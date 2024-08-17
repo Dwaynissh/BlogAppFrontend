@@ -1,0 +1,136 @@
+{
+  "status": "ok",
+  "totalResults": 632,
+  "articles": [
+    {
+      "source": {
+        "name": "Android Central"
+      },
+      "id": 1,
+      "author": "derrek.lee@futurenet.com (Derrek Lee)",
+      "title": "News Weekly: Google is a monopoly, Meta closes a first-party VR studio, new Google hardware, and more",
+      "description": "Google holds an illegal monopoly, according to a judge. Meta also closed a major first-party VR developer studio, Google launched new hardware devices, Garmin makes some useful changes to its store, and California may soon enable digital IDs on Google Wallet.",
+      "url": "https://www.androidcentral.com/apps-software/news-weekly-august-10-2024",
+      "urlToImage": "https://cdn.mos.cms.futurecdn.net/UgZSrUeePuYDLmBCNdZVHW-1200-80.jpg",
+      "publishedAt": "2024-08-10T12:00:43Z",
+      "content": "(Image credit: Android Central)\r\nNews Weekly is our column where we highlight and summarize some of the week's top stories so you can catch up on the latest tech news.\r\nThis is Android Central's News… [+6463 chars]"
+    },
+    {
+      "source": {
+        "name": "MacRumors"
+      },
+      "id": 2,
+      "author": "MacRumors Staff",
+      "title": "Top Stories: iOS 18 Beta 5 Features, Ultra-Tiny Mac Mini Rumor, and More",
+      "description": "Apple's work on iOS 18 continues, with a new Distraction Control feature and refinements for the Photos app, among other tweaks, coming in the latest beta. We're only about a month away from the official release, so Apple should be firming things up shortly.\n…",
+      "url": "https://www.macrumors.com/2024/08/10/top-stories-ios-18-beta-5/",
+      "urlToImage": "https://images.macrumors.com/t/l_9u2v7XZXYi_QEDP_yhVf-YNu4=/1600x/article-new/2024/08/top-stories-10aug2024.jpg",
+      "publishedAt": "2024-08-10T13:00:00Z",
+      "content": "Apple's work on iOS 18 continues, with a new Distraction Control feature and refinements for the Photos app, among other tweaks, coming in the latest beta. We're only about a month away from the offi… [+3760 chars]"
+    },
+    {
+      "source": {
+        "name": "MacRumors"
+      },
+      "id": 3,
+      "author": "Tim Hardwick",
+      "title": "iPhone 16 Launch Is Just One Month Out – Here's Everything We Know",
+      "description": "Apple typically releases its new iPhone series in the fall, and a possible September 10 announcement date has been floated this year, which means we are just one month away from the launch of the iPhone 16. Like the iPhone 15 series, this year's lineup is exp…",
+      "url": "https://www.macrumors.com/2024/08/10/iphone-16-launch-everything-we-know/",
+      "urlToImage": "https://images.macrumors.com/t/gwVhUOgL77RLG4cCJqxwAoYcVeY=/2500x/article-new/2023/12/iPhone-16-Pro-Sizes-Feature.jpg",
+      "publishedAt": "2024-08-10T12:00:00Z",
+      "content": "Apple typically releases its new iPhone series in the fall, and a possible September 10 announcement date has been floated this year, which means we are just one month away from the launch of the iPh… [+13462 chars]"
+    },
+    {
+      "source": {
+        "name": "Business Insider"
+      },
+      "id": 4,
+      "author": "Peter Kafka",
+      "title": "Why Apple should buy Warner Bros. Discovery. No, seriously.",
+      "description": "Tim Cook buying Warner Bros. Discovery, including its HBO jewel, is the kind of thing people have talked about for years. Now it finally makes sense.",
+      "url": "https://www.businessinsider.com/apple-should-buy-warner-bros-discovery-hbo-peter-kafka-2024-8",
+      "urlToImage": "https://i.insider.com/66b65fbf5da406397bf4a8bc?width=1200&format=jpeg",
+      "publishedAt": "2024-08-10T09:07:01Z",
+      "content": "Justin Sullivan/Getty Images; Rebecca Zisser/BI\r\n<ul><li>Come on, Tim Cook! Let's do a deal: Time to buy not just HBO but Warner Bros. Studios and everything else.</li><li>You want to build up your s… [+4879 chars]"
+    },
+    {
+      "source": {
+        "name": "Biztoc.com"
+      },
+      "id": 5,
+      "author": "theglobeandmail.com",
+      "title": "Tesla stops taking orders for cheapest Cybertruck, offers $100,000 version now",
+      "description": "Tesla has stopped taking orders for the least expensive version of its Cybertruck, which is priced at $61,000, while making the $100,000 version available for immediate order and delivery as soon as this month, its website showed.\nDemand and supply for the Cy…",
+      "url": "https://biztoc.com/x/a53221935494ce93",
+      "urlToImage": "https://biztoc.com/cdn/a53221935494ce93_s.webp",
+      "publishedAt": "2024-08-10T14:09:29Z",
+      "content": "Tesla has stopped taking orders for the least expensive version of its Cybertruck, which is priced at $61,000, while making the $100,000 version available for immediate order and delivery as soon as … [+135 chars]"
+    },
+    {
+      "source": {
+        "name": "TechCrunch"
+      },
+      "id": 6,
+      "author": "Kyle Wiggers",
+      "title": "Controversial drone company Xtend leans into defense with new $40M round | TechCrunch",
+      "description": "Xtend, a drone company heavily involved with defense customers, has raised a new round of capital to expand its operations.",
+      "url": "https://techcrunch.com/2024/05/08/controversial-drone-company-xtend-leans-into-defense/",
+      "urlToImage": "https://techcrunch.com/wp-content/uploads/2024/05/wildfire_drone_web.jpg?w=900",
+      "publishedAt": "2024-05-07T18:01:34Z",
+      "content": "Close to a decade ago, brothers Aviv and Matteo Shapira co-founded Replay, a company that created a video format for 360-degree replays — the sorts of replays that have become part and parcel of majo… [+5398 chars]"
+    },
+    {
+      "source": {
+        "name": "The Wall Street Journal"
+      },
+      "id": 7,
+      "author": "Victor Stefanescu and Alison Sider",
+      "title": "Delta’s Sagging Profit Signals Trouble for Airlines This Summer",
+      "description": "Airports are attracting record traffic, but higher costs and discounted fares are expected to weigh on carriers.",
+      "url": "https://www.wsj.com/business/airlines/delta-dal-q2-earnings-report-2024-e025fb71",
+      "urlToImage": "https://s.yimg.com/ny/api/res/1.2/shko7aINLFghwbYHor057w--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02MDA-/https://media.zenfs.com/en/the_wall_street_journal_hosted_996/8bd0bb64edbd8921a0406f042ce2ccb7",
+      "publishedAt": "2024-07-11T16:02:00Z",
+      "content": "Deltas second-quarter profit declined 29%. - Miguel Martinez/Zuma Press\r\nDelta Air Lines reported a sharply lower profit in the second quarter as it faced a new challenge during the busy summer trave… [+3584 chars]"
+    },
+    {
+      "source": {
+        "name": "The Wall Street Journal"
+      },
+      "id": 8,
+      "author": "Justin Baer, Gina Heeb and Alexander Saeedy",
+      "title": "Big Banks and Customers Continue to Feel Pressure From Higher Rates",
+      "description": "JPMorgan and Wells Fargo both reported a drop in quarterly profit, while Citigroup’s profit rose, driven in part by the bank’s cost-cutting measures.",
+      "url": "https://www.wsj.com/finance/banking/bank-earnings-jp-morgan-chase-wells-fargo-citigroup-23fd9540",
+      "urlToImage": "https://s.yimg.com/ny/api/res/1.2/HKXh1GJ9fvkHK2Af26lJtw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02MDA-/https://media.zenfs.com/en/the_wall_street_journal_hosted_996/6fe2d91448f6d9dacb2cb3c336e2ff24",
+      "publishedAt": "2024-07-12T20:26:00Z",
+      "content": "The countrys biggest banks, including JPMorgan Chase, began reporting quarterly earnings Friday. - Jeenah Moon/Bloomberg News\r\nThe fight to rein in inflation continues to weigh on some of the nations… [+5859 chars]"
+    },
+    {
+      "source": {
+        "name": "The Wall Street Journal"
+      },
+      "id": 9,
+      "author": "Patrick Thomas",
+      "title": "Pork Producer Smithfield Plans U.S. Stock Listing",
+      "description": "China’s WH Group seeks to list Smithfield’s U.S. and Mexico business after acquiring the enterprise more than a decade ago.",
+      "url": "https://www.wsj.com/business/retail/pork-producer-smithfield-plans-return-to-equity-u-s-markets-1f9eeb37",
+      "urlToImage": "https://s.yimg.com/ny/api/res/1.2/Tm2tNZPHeep0w6tjK.9T8Q--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02MDA-/https://media.zenfs.com/en/the_wall_street_journal_hosted_996/c9a75eb46f0f1e0f602d3d74ec0ba927",
+      "publishedAt": "2024-07-14T11:42:00Z",
+      "content": "Smithfield Foods is the largest U.S. pork producer. An employee handles sides of pork at a Smithfield facility in Milan, Mo. - Daniel Acker/Bloomberg News\r\nThe Chinese parent of Smithfield Foods says… [+3489 chars]"
+    },
+    {
+      "source": {
+        "name": "The Wall Street Journal"
+      },
+      "id": 10,
+      "author": "Anne Tergesen and Oyin Adedoyin",
+      "title": "The 401(k) Investors Convinced That Target-Date Funds Miss the Mark",
+      "description": "They are the default choice for millions of retirement savers who are automatically enrolled in 401(k) plans. But some investors are moving out of them.",
+      "url": "https://www.wsj.com/personal-finance/retirement/401k-savers-target-date-funds-alternatives-6e4e6f75",
+      "urlToImage": "https://s.yimg.com/ny/api/res/1.2/vpX9wLwvLmMrZLSsPX0riA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02MDA-/https://media.zenfs.com/en/the_wall_street_journal_hosted_996/200e36a41d4da40ee64854c3bc289a4d",
+      "publishedAt": "2024-08-04T01:00:00Z",
+      "content": "A group of investors are shunning the most popular retirement investment on Wall Street.\r\nTarget-date funds are a professionally managed portfolio of stocks and bonds that recalibrates the mix as we … [+6270 chars]"
+    }
+  ]
+}

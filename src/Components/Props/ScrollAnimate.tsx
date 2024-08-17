@@ -37,7 +37,7 @@ const ScrollAnimate: React.FC<ScrollAnimationProps> = ({ children }) => {
   return (
     <div
       ref={ref}
-      className={`transition-opacity duration-700 transform ${
+      className={`transition-opacity bg-red-50 scale-105 duration-700 transform ${
         isVisible ? "animate-appear" : "opacity-0 translate-y-16"
       }`}
     >
