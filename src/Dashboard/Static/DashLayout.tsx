@@ -12,22 +12,22 @@ const DashLayout = () => {
       <div
         className={`md:flex ${
           toggle ? "w-[90px]" : "w-[230px]"
-        } h-[100vh] fixed hidden bg-yellow-500  transition-all duration-300 z-30`}
+        } h-[100vh] fixed hidden bg-yellow-500  transition-all duration-300 z-40`}
       >
         <DashSideBar />
       </div>
-      <div className="flex w-[calc(100%)] justify-end transition-all duration-300">
+      <div className="flex w-[calc(100%)] justify-end">
         <div
-          className={`flex flex-col w-full transition-all duration-300 ${
+          className={`flex flex-col w-full ${
             toggle ? "md:w-[calc(100%-90px)] " : "md:w-[calc(100%-230px)]"
-          } justify-end`}
+          } justify-end transition-all duration-300`}
         >
           <div
             className={`fixed top-0 w-full ${
               toggle
                 ? "md:w-[calc(100%-90px)]"
                 : "md:w-[calc(100%-230px)] transition-all duration-[350ms]"
-            } z-50`}
+            } z-30`}
           >
             <DashHeader />
           </div>
