@@ -109,12 +109,12 @@ const Header = () => {
                 </div>
                 <div className="sm:hidden flex items-end justify-start flex-col gap-[15px]">
                   {/* <div className=" text-[#100a05] h-[20px] text-[20px] border " /> */}
-                  <Link to="/register">
+                  <Link to="/login">
                     <div className="text-[#100a05] md:text-[18px] font-semibold  hover:scale-110 transition-all duration-500">
                       Sign in
                     </div>
                   </Link>
-                  <Link to="/login">
+                  <Link to="/register">
                     <button className="py-1 px-2 border border-[#100a05] text-[#100a05]  shadow-sm rounded-lg bg-white font-semibold hover:scale-105 hover:bg-[#100a05] hover:text-white transition-all duration-[500ms]">
                       Join us for free
                     </button>
