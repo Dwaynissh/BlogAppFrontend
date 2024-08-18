@@ -9,7 +9,6 @@
 // const LoadingScreen = React.lazy(
 //   () => import("../Components/Props/LoadingScreen")
 // );
-// // Dashboard Nested Routes
 // const CreateBlog = React.lazy(() => import("../Dashboard/CreateBlog"));
 // const HomeScreen = React.lazy(() => import("../Dashboard/HomeScreen"));
 // const Fiction = React.lazy(() => import("../Dashboard/Fiction"));
@@ -19,8 +18,6 @@
 // const BookMark = React.lazy(() => import("../Dashboard/BookMark"));
 // const Liked = React.lazy(() => import("../Dashboard/Liked"));
 // const Settings = React.lazy(() => import("../Dashboard/Settings"));
-
-// // Auth Routes
 // const Login = React.lazy(() => import("../Auth/Login"));
 // const Register = React.lazy(() => import("../Auth/Register"));
 // const Verify = React.lazy(() => import("../Auth/Verify"));
@@ -62,7 +59,7 @@
 //         path: "publish",
 //         element: (
 //           <Suspense fallback={<LoadingScreen />}>
-//             <CreateBlog />,
+//             <CreateBlog />
 //           </Suspense>
 //         ),
 //       },
@@ -70,7 +67,7 @@
 //         path: "adventure",
 //         element: (
 //           <Suspense fallback={<LoadingScreen />}>
-//             <Adventure />,
+//             <Adventure />
 //           </Suspense>
 //         ),
 //       },
@@ -78,7 +75,7 @@
 //         path: "fiction",
 //         element: (
 //           <Suspense fallback={<LoadingScreen />}>
-//             <Fiction />,
+//             <Fiction />
 //           </Suspense>
 //         ),
 //       },
@@ -86,7 +83,7 @@
 //         path: "nonfiction",
 //         element: (
 //           <Suspense fallback={<LoadingScreen />}>
-//             <Nonfiction />,
+//             <Nonfiction />
 //           </Suspense>
 //         ),
 //       },
@@ -94,7 +91,7 @@
 //         path: "religious",
 //         element: (
 //           <Suspense fallback={<LoadingScreen />}>
-//             <Religious />,
+//             <Religious />
 //           </Suspense>
 //         ),
 //       },
@@ -118,7 +115,7 @@
 //         path: "settings",
 //         element: (
 //           <Suspense fallback={<LoadingScreen />}>
-//             <Settings />,
+//             <Settings />
 //           </Suspense>
 //         ),
 //       },
@@ -132,7 +129,7 @@
 //     path: "/login",
 //     element: (
 //       <Suspense fallback={<LoadingScreen />}>
-//         <Login />,
+//         <Login />
 //       </Suspense>
 //     ),
 //   },
@@ -140,7 +137,7 @@
 //     path: "/register",
 //     element: (
 //       <Suspense fallback={<LoadingScreen />}>
-//         <Register />,
+//         <Register />
 //       </Suspense>
 //     ),
 //   },
@@ -148,7 +145,7 @@
 //     path: "/verify",
 //     element: (
 //       <Suspense fallback={<LoadingScreen />}>
-//         <Verify />,
+//         <Verify />
 //       </Suspense>
 //     ),
 //   },
@@ -156,7 +153,7 @@
 //     path: "/welcome",
 //     element: (
 //       <Suspense fallback={<LoadingScreen />}>
-//         <WelcomeAlert />,
+//         <WelcomeAlert />
 //       </Suspense>
 //     ),
 //   },
@@ -190,6 +187,7 @@ import WelcomeAlert from "../Auth/WelcomeAlert";
 import FirsttimeScreen from "../Auth/FirstTime/FirsttimeScreen";
 import CreateBlog from "../Dashboard/CreateBlog";
 import RouteChecker from "./RouteChecker";
+import LoadingScreen from "../Components/Props/LoadingScreen";
 
 export const MainRouter = createBrowserRouter([
   {
@@ -251,6 +249,10 @@ export const MainRouter = createBrowserRouter([
         element: <DetailPage />,
       },
     ],
+  },
+  {
+    path: "/loading",
+    element: <LoadingScreen />,
   },
   {
     path: "/login",
