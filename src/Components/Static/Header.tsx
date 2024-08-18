@@ -56,12 +56,12 @@ const Header = () => {
           <div className="flex items-center justify-end gap-[25px]">
             <div className="hidden md:mb-1 sm:flex items-center justify-end gap-[25px]">
               <div className="text-[#100a05] h-[32px] text-[20px] border " />
-              <Link to="/register">
+              <Link to="/login">
                 <div className="text-[#100a05] text-[16px] md:text-[18px] font-semibold  hover:scale-110 transition-all duration-500">
                   Sign in
                 </div>
               </Link>
-              <Link to="/login">
+              <Link to="/register">
                 <button className="sm:py-2 lg:py-2 sm:px-3 lg:px-5 border border-[#100a05] text-[#100a05] text-[16px] md:text-[18px] shadow-sm rounded-lg bg-white font-semibold hover:scale-110 hover:bg-[#100a05] hover:text-white transition-all duration-[500ms]">
                   Join us for free
                 </button>
