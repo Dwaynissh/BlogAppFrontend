@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../Api/AuthApi";
 import { ClipLoader } from "react-spinners";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
+import logo from "../assets/Logos/bloghavenwhitecropped-removebg-preview.png";
 import { FiEye } from "react-icons/fi";
 import toast, { Toaster } from "react-hot-toast";
 import AOS from "aos";
@@ -47,8 +48,21 @@ const Register = () => {
   }, []);
 
   return (
-    <div className="w-full h-screen bg-gray-200 flex justify-center items-center">
+    <div className="w-full h-screen bg-gray-200 flex justify-center items-center flex-col">
       <Toaster />
+      <div className="text-center">
+        <Link to="/">
+          <img
+            src={logo}
+            alt=""
+            className="h-[50px] mb-[30px] w-[500px] md:h-auto md:w-auto object-contain"
+          />
+        </Link>
+        <div className="text-[18px] mb-[20px]">
+          You are welcome to{" "}
+          <span className="text-[#100a05] font-bold">BlogHaven</span>
+        </div>
+      </div>
       <div
         className="min-h-[200px] w-[400px] p-5 shadow-sm bg-white rounded-md"
         data-aos="fade-left"
