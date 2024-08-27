@@ -4,7 +4,7 @@ const WelcomeAlert = () => {
       <div className="w-full h-screen bg-gray-200 flex justify-center items-center">
         <div className="min-h-[200px] w-[470px] md:w-[550px] p-7 shadow-sm bg-white rounded-md flex flex-col justify-between">
           <div>
-            <div className="w-full mb-8 text-[purple] text-[20px] text-center font-bold">
+            <div className="w-full mb-8 text-[#100a05] text-[20px] text-center font-bold">
               Welcome, User! Important Notification
             </div>
             <h1 className="text-[18px] text-center font-medium">

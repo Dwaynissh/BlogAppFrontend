@@ -79,7 +79,7 @@ const Login = () => {
         </div>
       </div>
       <div
-        className="min-h-[200px] w-[400px] p-5 shadow-sm bg-white rounded-md"
+        className="min-h-[200px] md:min-h-[400px] min-w-[93%] sm:min-w-[70%] md:min-w-[500px] p-7 shadow-sm bg-white rounded-md"
         data-aos="fade-left"
       >
         <div className="pb-5 w-full flex justify-center items-center">
@@ -144,6 +144,7 @@ const Login = () => {
           <div className="mt-3 text-center text-[#100a05]">Register Here</div>
         </Link>
       </div>
+      <div className="mt-[30px]">This project is built with you in mind</div>
     </div>
   );
 };
