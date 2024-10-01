@@ -47,25 +47,25 @@ const CreateBlog = () => {
         category,
         content
       ).then((res) => {
-        toast.success("Successfully Created Blog");
-        console.log("Card created:", res);
-        setTimeout(() => {
-          navigate("/dashboard");
-        }, 3000);
-        return res.data;
+        if (res?.status === 201) {
+          toast.success("Successfully Created Blog");
+          setTimeout(() => {
+            navigate("/dashboard");
+          }, 3000);
+          return res?.data;
+        }
       });
     } catch (error) {
       toast.error("Incorrect Email or Password");
-      console.log("Error creating card:", error);
     }
   };
 
   return (
     <div className="w-full py-[20px] px-[20px] min-h-[100vh] rounded-[30px] bg-white relative appear">
       <Toaster />
-      <div className="w-full mb-4 top-[0]">
+      <div className="w-full mb-4 sticky top-[75px] z-[20]">
         <button
-          className={`py-2 px-5 bg-[#696969] text-[17px] text-white rounded-md font-medium flex justify-center items-center gap-2 ${
+          className={`py-2 px-5  bg-[#696969] text-[17px] text-white shadow-sm rounded-md font-medium flex justify-center items-center gap-2 ${
             loading || !blogData ? "cursor-not-allowed" : "cursor-pointer"
           }`}
           onClick={handleCreateCard}
@@ -81,7 +81,7 @@ const CreateBlog = () => {
           )}
         </button>
       </div>
-      <div className="w-full py-[20px] pr-[20px] bg-gray-200 rounded-md grid md:grid-cols-3">
+      <div className="w-full mb-4 py-[20px] pr-[20px] bg-gray-200 rounded-md grid md:grid-cols-3">
         <div className="h-full pl-[90px] md:pl-4 md:p-[10px] lg:p-[20px] ">
           <div className="relative h-[230px] md:h-[300px] bg-gray-400 w-[80%] sm:w-[70%] md:w-[100%] flex justify-center items-center rounded-md cursor-pointer">
             <img

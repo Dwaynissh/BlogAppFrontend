@@ -1,5 +1,5 @@
-import { useState, useEffect, useCallback } from "react";
-import { deleteCard, getAllCards } from "../Api/CardApi";
+import { useState } from "react";
+import { deleteCard } from "../Api/CardApi";
 import moment from "moment";
 // import Slider from "react-slick";
 // import "slick-carousel/slick/slick.css";
@@ -13,7 +13,7 @@ import { FaHeart } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { BiSolidErrorCircle } from "react-icons/bi";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { useSelector } from "react-redux";
 import { jwtDecode } from "jwt-decode";
 import { useGetAllCards } from "../Hooks/useSwrData";
@@ -22,35 +22,20 @@ const HomeScreen = () => {
   const [hover] = useState<Boolean>(false);
   const [isClicked, setIsClicked] = useState(false);
   const [searchCard, setSearchCard] = useState("");
-  const userToken: any = useSelector((state: any) => state.user);
 
+  const { data }: any = useGetAllCards();
+
+  const userToken: any = useSelector((state: any) => state.user);
   const decodedToken: any = jwtDecode(userToken);
   const userID = decodedToken.id;
 
-  const [card, setCard] = useState([]);
-  const { data }: any = useGetAllCards();
-  console.log("reading renderall", data);
-
-  // const fetchAllCards = useCallback(() => {
-  //   try {
-  //     getAllCards().then((res) => {
-  //       if (res && res.data) {
-  //         setCard(res.data);
-  //       } else {
-  //         console.log(res.message);
-  //         setCard([]);
-  //       }
-  //     });
-  //   } catch (error) {
-  //     console.error("Error fetching All Cards:", error);
-  //     setCard([]);
-  //   }
-  // }, []);
-
-  const handleDeleteCard = (cardID: any) => {
+  const handleDeleteCard = (cardID: string) => {
     try {
-      deleteCard(userID, cardID).then(() => {
-        toast.success("Card Deleted Successfully");
+      deleteCard(userID, cardID).then((res) => {
+        console.log("ress", res);
+        if (res?.response?.data?.status == 200) {
+          toast.success("Card Deleted Successfully");
+        }
       });
     } catch (error) {
       toast.error("Error deleting card");
@@ -67,19 +52,20 @@ const HomeScreen = () => {
   //   addBookmark(cardID);
   // };
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: true,
-  };
+  // const settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   autoplaySpeed: 3000,
+  //   arrows: true,
+  // };
 
   return (
     <div className="w-full p-4 min-h-[calc(100vh-70px)] pt-[30px] py-2 px-2 appear">
+      <Toaster />
       <div className="border p-4 ">
         <div className="border mb-2 w-full h-[150px] rounded-md slider-container">
           {/* <Slider {...settings}>
@@ -99,8 +85,8 @@ const HomeScreen = () => {
           <div className="border m-1 p-[20px] rounded-md  sm:block flex justify-center items-center gap-[40px] ">
             <div className="w-[50%] sm:w-full sm:block flex justify-between items-center">
               <h1>Total Blogs:</h1>
-              {filteredCards.length > 0 ? (
-                <h1 className="font-bold text-[25px]">{card.length}</h1>
+              {filteredCards?.length > 0 ? (
+                <h1 className="font-bold text-[25px]">{data?.length}</h1>
               ) : (
                 <h1 className="font-bold text-[25px]">0</h1>
               )}
@@ -109,7 +95,7 @@ const HomeScreen = () => {
           <div className="border m-1 p-[20px] rounded-md  sm:block flex justify-center items-center gap-[40px] ">
             <div className="w-[50%] sm:w-full sm:block flex justify-between items-center">
               <h1>Total Bookmarks:</h1>
-              {filteredCards.length > 0 ? (
+              {filteredCards?.length > 0 ? (
                 <h1 className="font-bold text-[25px]">1</h1>
               ) : (
                 <h1 className="font-bold text-[25px]">0</h1>
@@ -119,7 +105,7 @@ const HomeScreen = () => {
           <div className="border m-1 p-[20px] rounded-md  sm:block flex justify-center items-center gap-[40px]">
             <div className="w-[50%] sm:w-full sm:block flex justify-between items-center">
               <h1>Total Likes:</h1>
-              {filteredCards.length > 0 ? (
+              {filteredCards?.length > 0 ? (
                 <h1 className="font-bold text-[25px]">1</h1>
               ) : (
                 <h1 className="font-bold text-[25px]">0</h1>
@@ -148,8 +134,8 @@ const HomeScreen = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center lg:place-items-end border min-h-[480px] rounded-md">
           {/* Card Stying */}
-          {filteredCards.length > 0 ? (
-            filteredCards.map((props: any) => (
+          {filteredCards?.length > 0 ? (
+            filteredCards?.map((props: any) => (
               <div key={props._id} className="p-2">
                 <div className="m-4 py-6 px-5 w-[95%] sm:w-[90%] md:w-[95%] lg:w-[98%] bg-gray-50 rounded-[12px] text-[#100a05] h-[455px] transition-all duration-[350ms] flex justify-center items-start flex-col border border-[#100a05]">
                   <div className="w-full mt-3 mb-4 flex justify-between items-center">

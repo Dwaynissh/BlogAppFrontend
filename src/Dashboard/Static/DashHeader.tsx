@@ -2,7 +2,7 @@ import { useState } from "react";
 import { BiMenuAltRight } from "react-icons/bi";
 import { FiSettings, FiUpload } from "react-icons/fi";
 import { MdCreate, MdFeed, MdLogout } from "react-icons/md";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import HeaderMobileNavs from "./HeaderMobileNavs";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -36,6 +36,7 @@ const DashHeader = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
   };
 
+  const location = useLocation().pathname;
   return (
     <div className="h-[70px] flex justify-center items-center bg-[#b6b6b6] shadow-sm">
       <div className="w-[95%] py-2 flex justify-between items-center gap-5 transition-all duration-300">
@@ -43,15 +44,19 @@ const DashHeader = () => {
           <h1 className="font-semibold">Welcome Prince John</h1>
         </div>
         <div className="flex justify-end items-center gap-[20px] transition-all duration-300">
-          <NavLink
-            to="publish"
-            className={({ isActive }) => (isActive ? "" : "")}
-          >
-            <button className="py-2 px-2 text-[12px] md:text-[15px] md:py-3 md:px-3 bg-gray-200 text-[#100a05] rounded-[10px] font-semibold shadow-md flex justify-center items-center gap-2 scale-100">
-              publish a post
-              <MdCreate className="" />
-            </button>
-          </NavLink>
+          {location === "/dashboard/publish" ? (
+            <div></div>
+          ) : (
+            <NavLink
+              to="publish"
+              className={({ isActive }) => (isActive ? "" : "")}
+            >
+              <button className="py-2 px-2 text-[12px] md:text-[15px] md:py-3 md:px-3 bg-gray-200 text-[#100a05] rounded-[10px] font-semibold shadow-md flex justify-center items-center gap-2 scale-100">
+                publish a post
+                <MdCreate className="" />
+              </button>
+            </NavLink>
+          )}
           <div>
             <div
               className=" border border-black rounded-full font-bold bg-gray-200 text-[#100a05] cursor-pointer scale-105 transition-all duration-300"

@@ -69,16 +69,18 @@
 }
 
 @keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(4rem);
+  0% {
+    transform: translateY(-10px);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0%);
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(0);
+    transition: all 300ms;
   }
 }
 
 .appear {
-  animation: appear 750ms ease-in-out;
+  animation: appear 2s;
 }
