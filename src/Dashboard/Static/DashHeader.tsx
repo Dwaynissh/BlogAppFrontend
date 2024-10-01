@@ -11,13 +11,23 @@ import { RiProfileFill } from "react-icons/ri";
 import { logoutState } from "../../Redux/ReduxState";
 import { logoutUser } from "../../Api/AuthApi";
 import { useDispatch } from "react-redux";
+import { useUserProfile } from "../../Hooks/useSwrData";
+import { useSelector } from "react-redux";
+import { jwtDecode } from "jwt-decode";
 useDispatch;
 scroll;
 
 const DashHeader = () => {
   const [drop, setDrop] = useState(false);
   const [menu, setMenu] = useState(false);
+  const location = useLocation().pathname;
   const dispatch = useDispatch();
+
+  const userToken = useSelector((state: any) => state.user);
+  const decodeToken: any = jwtDecode(userToken);
+  const userID = decodeToken.id;
+  const { data: user }: any = useUserProfile(userID);
+  console.log(user);
 
   const handleMenu = () => {
     setMenu(!menu);
@@ -36,12 +46,11 @@ const DashHeader = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
   };
 
-  const location = useLocation().pathname;
   return (
     <div className="h-[70px] flex justify-center items-center bg-[#b6b6b6] shadow-sm">
       <div className="w-[95%] py-2 flex justify-between items-center gap-5 transition-all duration-300">
         <div>
-          <h1 className="font-semibold">Welcome Prince John</h1>
+          <h1 className="font-semibold">Welcome {user?.fullName} </h1>
         </div>
         <div className="flex justify-end items-center gap-[20px] transition-all duration-300">
           {location === "/dashboard/publish" ? (
@@ -125,12 +134,12 @@ const DashHeader = () => {
             <div>
               <div className="mb-2 h-[40px] bg-[#100a05] rounded-sm flex justify-center items-center relative">
                 <div className="w-[20%] px-2 py-[3px] absolute bottom-[-10px] flex justify-center items-center rounded-full border border-[#100a05] bg-white">
-                  PJ
+                  {user?.initials}
                 </div>
               </div>
               <div className="text-center mb-1 p-2">
                 <h1 className="uppercase mb-1">Prince John</h1>
-                <h2>dwaynissh@gmail.com</h2>
+                <h2>{user?.email}</h2>
               </div>
             </div>
             <div className="p-2 flex items-center justify-start gap-2 rounded-md hover:bg-gray-300 cursor-pointer">

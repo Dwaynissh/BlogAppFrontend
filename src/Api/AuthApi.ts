@@ -18,7 +18,6 @@ export const loginUser = async (email: string, password: string) => {
     return await axios
       .post(`${url}/login-user`, { email, password }, { withCredentials: true })
       .then((res: AxiosResponse) => {
-        console.log("viewing api login res", res?.data);
         return res?.data;
       });
   } catch (error) {
@@ -42,7 +41,6 @@ export const createProfile = async (
         profession,
       })
       .then((res: AxiosResponse<any, any>) => {
-        console.log("Api checking Profile response", res?.data);
         return res?.data;
       });
   } catch (error) {
@@ -56,7 +54,6 @@ export const getOneUser = async (userID: any) => {
     return await axios
       .get(`${url}/get-one-user/${userID}`)
       .then((res: AxiosResponse<any, any>) => {
-        console.log("Reading User data", res.data);
         return res.data;
       });
   } catch (error) {
