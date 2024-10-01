@@ -16,6 +16,7 @@ import { BiSolidErrorCircle } from "react-icons/bi";
 import toast from "react-hot-toast";
 import { useSelector } from "react-redux";
 import { jwtDecode } from "jwt-decode";
+import { useGetAllCards } from "../Hooks/useSwrData";
 
 const HomeScreen = () => {
   const [hover] = useState<Boolean>(false);
@@ -27,28 +28,29 @@ const HomeScreen = () => {
   const userID = decodedToken.id;
 
   const [card, setCard] = useState([]);
+  const { data }: any = useGetAllCards();
+  console.log("reading renderall", data);
 
-  const fetchAllCards = useCallback(() => {
-    try {
-      getAllCards().then((res) => {
-        if (res && res.data) {
-          setCard(res.data);
-        } else {
-          console.log(res.message);
-          setCard([]);
-        }
-      });
-    } catch (error) {
-      console.error("Error fetching All Cards:", error);
-      setCard([]);
-    }
-  }, []);
+  // const fetchAllCards = useCallback(() => {
+  //   try {
+  //     getAllCards().then((res) => {
+  //       if (res && res.data) {
+  //         setCard(res.data);
+  //       } else {
+  //         console.log(res.message);
+  //         setCard([]);
+  //       }
+  //     });
+  //   } catch (error) {
+  //     console.error("Error fetching All Cards:", error);
+  //     setCard([]);
+  //   }
+  // }, []);
 
   const handleDeleteCard = (cardID: any) => {
     try {
       deleteCard(userID, cardID).then(() => {
         toast.success("Card Deleted Successfully");
-        fetchAllCards();
       });
     } catch (error) {
       toast.error("Error deleting card");
@@ -56,11 +58,7 @@ const HomeScreen = () => {
     }
   };
 
-  useEffect(() => {
-    fetchAllCards();
-  }, [fetchAllCards]);
-
-  const filteredCards = card.filter((el: any) => {
+  const filteredCards = data?.filter((el: any) => {
     const titleName = `${el.title}`.toLowerCase();
     return titleName.includes(searchCard.toLowerCase());
   });

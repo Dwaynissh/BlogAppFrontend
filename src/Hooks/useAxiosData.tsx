@@ -35,3 +35,24 @@ const useAxiosData = <data,>(url: string): UseAxiosDataResult<data> => {
 };
 
 export default useAxiosData;
+
+// export const useFeeRecords = (schoolID: string) => {
+//   try {
+//     const { data: recordPayment } = useSWR(
+//       `api/getall-fee-records/${schoolID}`,
+//       async () => {
+//         return await getRecords(schoolID).then(
+//           (res: any) => res?.data?.recordPayments || []
+//         );
+//       },
+//       { refreshInterval: 2000 }
+//     );
+
+//     return {
+//       payments: recordPayment || []
+//     };
+//   } catch (error) {
+//     console.error();
+//     return error;
+//   }
+// };

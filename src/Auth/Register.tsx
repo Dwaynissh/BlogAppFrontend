@@ -22,14 +22,15 @@ const Register = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await registerUser(email, password);
-      if (res?.status === 201) {
-        toast.success(`${res?.message}`);
-        navigate("/welcome");
-        return res?.data;
-      } else {
-        toast.error(`${res?.message}`);
-      }
+      registerUser(email, password).then((res) => {
+        if (res?.status === 201) {
+          toast.success(`${res?.message}`);
+          navigate("/welcome");
+          return res?.data;
+        } else {
+          toast.error(`${res?.data?.message}`);
+        }
+      });
     } catch (error) {
       console.log("Error in onhandleSubmit", error);
     } finally {

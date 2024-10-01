@@ -11,6 +11,8 @@ import { RiProfileFill } from "react-icons/ri";
 import { logoutState } from "../../Redux/ReduxState";
 import { logoutUser } from "../../Api/AuthApi";
 import { useDispatch } from "react-redux";
+useDispatch;
+scroll;
 
 const DashHeader = () => {
   const [drop, setDrop] = useState(false);
