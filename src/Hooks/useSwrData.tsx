@@ -10,9 +10,7 @@ export const useUserProfile = (userID: string) => {
       });
     });
 
-    return {
-      data: user,
-    };
+    return { data: user };
   } catch (error) {
     console.error();
     return error;
@@ -30,9 +28,7 @@ export const useGetAllCards = () => {
       },
       { refreshInterval: 2000 }
     );
-    return {
-      data: allCards || [],
-    };
+    return { data: allCards };
   } catch (error) {
     console.error();
     return error;
