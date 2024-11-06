@@ -1,6 +1,6 @@
 import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
 import { useContext } from "react";
-import { GlobalContext } from "../Provider/ContextProvider";
+import { GlobalContext } from 
 import Marquee from "react-fast-marquee";
 import heroimg from "../assets/bloglappy-removebg-preview.png";
 import tiktok from "../assets/companyimgs/tiktok.51111cc4.png";
