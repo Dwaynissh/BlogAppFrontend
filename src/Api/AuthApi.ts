@@ -13,6 +13,7 @@ export const registerUser = async (email: string, password: string) => {
     console.log(error);
   }
 };
+
 export const loginUser = async (email: string, password: string) => {
   try {
     return await axios

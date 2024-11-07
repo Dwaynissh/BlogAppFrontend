@@ -79,9 +79,9 @@ const Register = () => {
           </label>
 
           <input
-            type="email"
-            name="email"
             id="email"
+            name="email"
+            type="email"
             className="w-full mb-3 h-[42px] pl-2 bg-gray-100"
             placeholder="princejohn@mail.com"
             value={email}
@@ -98,8 +98,8 @@ const Register = () => {
           </label>
           <div className="bg-gray-100 pr-2 flex items-center justify-center">
             <input
-              name="password"
               id="password"
+              name="password"
               type={isVisible ? "text" : "password"}
               className=" h-[42px] flex-1 pl-2 bg-gray-100"
               placeholder="*********"
@@ -139,7 +139,12 @@ const Register = () => {
           </div>
         </form>
         <Link to="/login">
-          <div className="mt-3 text-center text-[#100a05]">Login Here</div>
+          <div className="mt-4 text-center">
+            Already Have an account?{" "}
+            <span className="mt-3 ml-1 font-semibold text-[#100a05]">
+              Login Here
+            </span>
+          </div>
         </Link>
       </div>
       <div className="mt-[30px]">This project is built with you in mind</div>

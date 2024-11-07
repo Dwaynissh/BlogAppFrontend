@@ -27,7 +27,8 @@ const Login = () => {
 
     setTimeout(() => {
       try {
-        loginUser(email, password).then((res) => {
+        loginUser(email, password).then((res: any) => {
+          console.log("checking what res is", res);
           if (res?.status === 200) {
             toast.success("Login Successfully, Welcome back 😊");
             dispatch(loginState(res?.data));
@@ -153,7 +154,12 @@ const Login = () => {
           </div>
         </form>
         <Link to="/register">
-          <div className="mt-3 text-center text-[#100a05]">Register Here</div>
+          <div className="mt-4 text-center">
+            Don't Have an account?{" "}
+            <span className="mt-3 ml-1 font-semibold text-[#100a05]">
+              Register Here
+            </span>
+          </div>
         </Link>
       </div>
       <div className="mt-[30px]">This project is built with you in mind</div>
