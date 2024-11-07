@@ -73,59 +73,71 @@ const Register = () => {
             Register to Create your Blog
           </div>
         </div>
-        <div className="mb-3 text-[#100a05] font-semibold">Email</div>
+        <form onSubmit={onhandleSubmit}>
+          <label htmlFor="email" className="mb-3 text-[#100a05] font-semibold">
+            Email
+          </label>
 
-        <input
-          type="email"
-          className="w-full mb-3 h-[42px] pl-2 bg-gray-100"
-          placeholder="princejohn@mail.com"
-          value={email}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            setEmail(e.target.value);
-          }}
-        />
-
-        <div className="mb-3 text-[#100a05] font-semibold">Password</div>
-        <div className="bg-gray-100 pr-2 flex items-center justify-center">
           <input
-            type={isVisible ? "text" : "password"}
-            className=" h-[42px] flex-1 pl-2 bg-gray-100"
-            placeholder="*********"
-            value={password}
+            type="email"
+            name="email"
+            id="email"
+            className="w-full mb-3 h-[42px] pl-2 bg-gray-100"
+            placeholder="princejohn@mail.com"
+            value={email}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              setPassword(e.target.value);
+              setEmail(e.target.value);
             }}
           />
-          {isVisible ? (
-            <FiEye
-              className=" text-[#100a05] ml-3 text-[18px] font-semibold"
-              onClick={passwordVisibility}
-            />
-          ) : (
-            <AiOutlineEyeInvisible
-              className=" text-[#100a05] ml-3 text-[18px] font-semibold"
-              onClick={passwordVisibility}
-            />
-          )}
-        </div>
-        <div className="mt-5 w-full">
-          <button
-            className={`py-2 px-5 w-full bg-[#100a05] text-white text-[16px] shadow-sm rounded-md flex items-center justify-center gap-2 ${
-              loading || !registerDetails ? "cursor-not-allowed" : ""
-            }`}
-            onClick={onhandleSubmit}
-            disabled={loading || !registerDetails}
+
+          <label
+            htmlFor="password"
+            className="mb-3 text-[#100a05] font-semibold"
           >
-            {loading ? (
-              <>
-                <ClipLoader color={"#fff"} loading={loading} size={20} />
-                Subitting...
-              </>
+            Password
+          </label>
+          <div className="bg-gray-100 pr-2 flex items-center justify-center">
+            <input
+              name="password"
+              id="password"
+              type={isVisible ? "text" : "password"}
+              className=" h-[42px] flex-1 pl-2 bg-gray-100"
+              placeholder="*********"
+              value={password}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                setPassword(e.target.value);
+              }}
+            />
+            {isVisible ? (
+              <FiEye
+                className=" text-[#100a05] ml-3 text-[18px] font-semibold"
+                onClick={passwordVisibility}
+              />
             ) : (
-              "Submit"
+              <AiOutlineEyeInvisible
+                className=" text-[#100a05] ml-3 text-[18px] font-semibold"
+                onClick={passwordVisibility}
+              />
             )}
-          </button>
-        </div>
+          </div>
+          <div className="mt-5 w-full">
+            <button
+              className={`py-2 px-5 w-full bg-[#100a05] text-white text-[16px] shadow-sm rounded-md flex items-center justify-center gap-2 ${
+                loading || !registerDetails ? "cursor-not-allowed" : ""
+              }`}
+              disabled={loading || !registerDetails}
+            >
+              {loading ? (
+                <>
+                  <ClipLoader color={"#fff"} loading={loading} size={20} />
+                  Subitting...
+                </>
+              ) : (
+                "Submit"
+              )}
+            </button>
+          </div>
+        </form>
         <Link to="/login">
           <div className="mt-3 text-center text-[#100a05]">Login Here</div>
         </Link>

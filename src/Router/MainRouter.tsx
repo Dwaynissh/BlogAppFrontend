@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../Components/LayoutHolder/Layout";
-import Hero from "../Pages/Hero";
+import Hero from "../Pages/LandingPages/Hero";
 import PrivateRouter from "./PrivateRouter";
 import DetailPage from "../Dashboard/DetailsPage/DetailPage";
 import RouteChecker from "./RouteChecker";

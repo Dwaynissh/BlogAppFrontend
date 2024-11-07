@@ -29,7 +29,6 @@ const Login = () => {
       try {
         loginUser(email, password).then((res) => {
           if (res?.status === 200) {
-            console.log("Login code res", res.data);
             toast.success("Login Successfully, Welcome back 😊");
             dispatch(loginState(res?.data));
             if (res?.login.firstlogin === true) {
@@ -87,59 +86,72 @@ const Login = () => {
             Login to your Account here
           </div>
         </div>
-        <div className="mb-3 text-[#100a05] font-semibold">Email</div>
+        <form onSubmit={onhandleSubmit}>
+          <label htmlFor="email" className="mb-3 text-[#100a05] font-semibold">
+            Email
+          </label>
 
-        <input
-          type="email"
-          className="w-full mb-3 h-[42px] pl-2 bg-gray-100"
-          placeholder="princejohn@mail.com"
-          value={email}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            setEmail(e.target.value);
-          }}
-        />
-
-        <div className="mb-3 text-[#100a05] font-semibold">Password</div>
-        <div className="bg-gray-100 pr-2 flex items-center justify-center">
           <input
-            type={isVisible ? "text" : "password"}
-            className=" h-[42px] flex-1 pl-2 bg-gray-100"
-            placeholder="*********"
-            value={password}
+            type="email"
+            id="email"
+            name="email"
+            required
+            className="w-full mb-3 h-[42px] pl-2 bg-gray-100"
+            placeholder="princejohn@mail.com"
+            value={email}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              setPassword(e.target.value);
+              setEmail(e.target.value);
             }}
           />
-          {isVisible ? (
-            <FiEye
-              className=" text-[#100a05] ml-3 text-[18px] font-semibold"
-              onClick={passwordVisibility}
-            />
-          ) : (
-            <AiOutlineEyeInvisible
-              className=" text-[#100a05] ml-3 text-[18px] font-semibold"
-              onClick={passwordVisibility}
-            />
-          )}
-        </div>
-        <div className="mt-5 w-full">
-          <button
-            className={`py-2 px-5 w-full bg-[#100a05] text-white text-[16px] shadow-sm rounded-md flex items-center justify-center gap-2 ${
-              loading || !loginDetails ? "cursor-not-allowed" : ""
-            }`}
-            onClick={onhandleSubmit}
-            disabled={loading || !loginDetails}
+
+          <label
+            htmlFor="password"
+            className="mb-3 text-[#100a05] font-semibold"
           >
-            {loading ? (
-              <>
-                <ClipLoader color={"#fff"} loading={loading} size={20} />
-                Logging you in...
-              </>
+            Password
+          </label>
+          <div className="bg-gray-100 pr-2 flex items-center justify-center">
+            <input
+              id="password"
+              name="password"
+              type={isVisible ? "text" : "password"}
+              className=" h-[42px] flex-1 pl-2 bg-gray-100"
+              placeholder="*********"
+              value={password}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                setPassword(e.target.value);
+              }}
+            />
+            {isVisible ? (
+              <FiEye
+                className=" text-[#100a05] ml-3 text-[18px] font-semibold"
+                onClick={passwordVisibility}
+              />
             ) : (
-              "Login"
+              <AiOutlineEyeInvisible
+                className=" text-[#100a05] ml-3 text-[18px] font-semibold"
+                onClick={passwordVisibility}
+              />
             )}
-          </button>
-        </div>
+          </div>
+          <div className="mt-5 w-full">
+            <button
+              className={`py-2 px-5 w-full bg-[#100a05] text-white text-[16px] shadow-sm rounded-md flex items-center justify-center gap-2 ${
+                loading || !loginDetails ? "cursor-not-allowed" : ""
+              }`}
+              disabled={loading || !loginDetails}
+            >
+              {loading ? (
+                <>
+                  <ClipLoader color={"#fff"} loading={loading} size={20} />
+                  Logging you in...
+                </>
+              ) : (
+                "Login"
+              )}
+            </button>
+          </div>
+        </form>
         <Link to="/register">
           <div className="mt-3 text-center text-[#100a05]">Register Here</div>
         </Link>

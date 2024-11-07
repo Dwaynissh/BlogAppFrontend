@@ -1,15 +1,15 @@
 import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
-import { useContext } from "react";
-import { GlobalContext } from 
 import Marquee from "react-fast-marquee";
-import heroimg from "../assets/bloglappy-removebg-preview.png";
-import tiktok from "../assets/companyimgs/tiktok.51111cc4.png";
-import mono from "../assets/companyimgs/mono.b4cdd575.jpeg";
-import hootsuite from "../assets/companyimgs/Hootsuite.6f43348b.png";
-import paystack from "../assets/companyimgs/paystack.5577e2b0.png";
-import palmpay from "../assets/companyimgs/palmpay.f4ba7c46.jpeg";
-import teamapt from "../assets/companyimgs/teamapt.18b44ce9.png";
-import dash from "../assets/Myblogdashboard.png";
+import heroimg from "../../assets/bloglappy-removebg-preview.png";
+import tiktok from "../../assets/companyimgs/tiktok.51111cc4.png";
+import mono from "../../assets/companyimgs/mono.b4cdd575.jpeg";
+import hootsuite from "../../assets/companyimgs/Hootsuite.6f43348b.png";
+import paystack from "../../assets/companyimgs/paystack.5577e2b0.png";
+import palmpay from "../../assets/companyimgs/palmpay.f4ba7c46.jpeg";
+import teamapt from "../../assets/companyimgs/teamapt.18b44ce9.png";
+import dash from "../../assets/Myblogdashboard.png";
+import { useContext } from "react";
+import { GlobalContext } from "../../Provider/ContextProvider";
 
 const Hero = () => {
   const { menu } = useContext(GlobalContext);
