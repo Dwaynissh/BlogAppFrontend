@@ -105,7 +105,9 @@ const HomeScreen = () => {
             <div className="w-[50%] sm:w-full sm:block flex justify-between items-center">
               <h1>Total Likes:</h1>
               {filteredCards?.length > 0 ? (
-                <h1 className="font-bold text-[25px]">1</h1>
+                <h1 className="font-bold text-[25px]">
+                  {filteredCards?.length}
+                </h1>
               ) : (
                 <h1 className="font-bold text-[25px]">0</h1>
               )}
