@@ -32,8 +32,7 @@ const HomeScreen = () => {
   const handleDeleteCard = (cardID: string) => {
     try {
       deleteCard(userID, cardID).then((res) => {
-        console.log("ress", res);
-        if (res?.response?.data?.status == 200) {
+        if (res?.response?.data?.status === 200) {
           toast.success("Card Deleted Successfully");
         }
       });
@@ -141,7 +140,7 @@ const HomeScreen = () => {
                   <div className="w-full mt-3 mb-4 flex justify-between items-center">
                     <div className="flex justify-center items-center gap-3">
                       <div className="p-2 bg-[#100a05] text-[white] text-[15px] rounded-full border border-[white] ">
-                        {props.category}
+                        {props?.category}
                       </div>
                       <div>{moment(props.createdAt).fromNow()}</div>
                     </div>
@@ -151,7 +150,7 @@ const HomeScreen = () => {
                         handleDeleteCard(props?._id);
                       }}
                     >
-                      <MdDelete className="text-[22px]" />
+                      <MdDelete className="text-[22px] hover:scale-125 transition-all duration-300" />
                     </div>
                   </div>
                   <div className="mb-4 text-[20px] font-bold">

@@ -48,15 +48,16 @@ const CreateBlog = () => {
         content
       ).then((res) => {
         if (res?.status === 201) {
-          toast.success("Successfully Created Blog");
-          setTimeout(() => {
+          const timeout: NodeJS.Timeout = setTimeout(() => {
+            toast.success("Successfully Created Blog");
             navigate("/dashboard");
+            clearTimeout(timeout);
           }, 3000);
           return res?.data;
         }
       });
     } catch (error) {
-      toast.error("Incorrect Email or Password");
+      toast.error("No User Found");
     }
   };
 
@@ -181,6 +182,7 @@ const CreateBlog = () => {
               editor={ClassicEditor}
               data={content}
               onChange={(event, editor) => {
+                event;
                 const data = editor.getData();
                 setContent(data);
               }}
