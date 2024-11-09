@@ -43,7 +43,7 @@ const HomeScreen = () => {
   };
 
   const filteredCards = data?.filter((el: any) => {
-    const titleName = `${el.title}`.toLowerCase();
+    const titleName = `${el.title} ${el.author}`.toLowerCase();
     return titleName.includes(searchCard.toLowerCase());
   });
 
