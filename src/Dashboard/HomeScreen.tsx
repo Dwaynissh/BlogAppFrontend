@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { deleteCard } from "../Api/CardApi";
+import { addBookmark, deleteCard } from "../Api/CardApi";
 import moment from "moment";
 // import Slider from "react-slick";
 // import "slick-carousel/slick/slick.css";
@@ -47,20 +47,20 @@ const HomeScreen = () => {
     return titleName.includes(searchCard.toLowerCase());
   });
 
-  // const addBookmarktoCard = (cardID: any) => {
-  //   addBookmark(cardID);
-  // };
+  const addBookmarktoCard = (cardID: any) => {
+    addBookmark(cardID);
+  };
 
-  // const settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  //   autoplay: true,
-  //   autoplaySpeed: 3000,
-  //   arrows: true,
-  // };
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: true,
+  };
 
   return (
     <div className="w-full p-4 min-h-[calc(100vh-70px)] pt-[30px] py-2 px-2 appear">
