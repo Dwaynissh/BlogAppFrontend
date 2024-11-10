@@ -25,10 +25,9 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
 
-    setTimeout(() => {
+    const delayLogin: NodeJS.Timeout = setTimeout(() => {
       try {
         loginUser(email, password).then((res: any) => {
-          console.log("checking what res is", res);
           if (res?.status === 200) {
             toast.success("Login Successfully, Welcome back 😊");
             dispatch(loginState(res?.data));
@@ -47,7 +46,7 @@ const Login = () => {
         setLoading(false);
       }
 
-      clearTimeout;
+      clearTimeout(delayLogin);
     }, 2000);
   };
 
@@ -74,7 +73,7 @@ const Login = () => {
           />
         </Link>
         <div className="text-[18px] mb-[20px]">
-          You are welcome to{" "}
+          Welcome back to &nbsp;
           <span className="text-[#100a05] font-bold">BlogHaven</span>
         </div>
       </div>
