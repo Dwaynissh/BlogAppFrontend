@@ -24,6 +24,7 @@ const Verify = () => {
           We appreciate you for registering with us. You can look forward to
           giving you the best services we have to offer.
         </div>
+        <h1>Happy Blogging!</h1>
       </div>
     </div>
   );
