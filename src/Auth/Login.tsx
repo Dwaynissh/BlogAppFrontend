@@ -29,7 +29,6 @@ const Login = () => {
       try {
         loginUser(email, password).then((res: any) => {
           if (res?.status === 200) {
-            toast.success("Login Successfully, Welcome back 😊");
             dispatch(loginState(res?.data));
             if (res?.login.firstlogin === true) {
               navigate("/dashboard");

@@ -4,6 +4,7 @@ import {
   bioState,
   fullNameState,
   genderState,
+  mainPage,
   nextpage,
   professionState,
 } from "../../Redux/ReduxState";
@@ -292,6 +293,11 @@ const PageThree = () => {
 
 const FirsttimeScreen = () => {
   const page = useSelector((state: any) => state.page);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(mainPage());
+  }, [dispatch]);
 
   return (
     <div>
