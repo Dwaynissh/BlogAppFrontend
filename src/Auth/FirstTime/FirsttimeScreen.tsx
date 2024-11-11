@@ -265,7 +265,6 @@ const PageThree = () => {
             <option value="Teacher">Teacher</option>
             <option value="Student">Student</option>
             <option value="Software Developer">Software Developer</option>
-            <option value="Other">Other</option>
           </select>
         </div>
 
