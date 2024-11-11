@@ -209,6 +209,7 @@ const PageThree = () => {
     try {
       createProfile(userID, userName, userGender, userBio, profession).then(
         (res) => {
+          console.log(res);
           if (res.status === 201) {
             navigate("/dashboard");
             return res.data;
