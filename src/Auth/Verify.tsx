@@ -25,6 +25,9 @@ const Verify = () => {
           giving you the best services we have to offer.
         </div> */}
         <div>Hello</div>
+        <div>Hello</div>
+        <div>Hello</div>
+        <div>Hello</div>
       </div>
     </div>
   );
