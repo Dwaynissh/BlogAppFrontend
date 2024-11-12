@@ -28,6 +28,9 @@ const Verify = () => {
         <div>Hello</div>
         <div>Hello</div>
         <div>Hello</div>
+        <div>Hello</div>
+        <div>Hello</div>
+        <div>Hello</div>
       </div>
     </div>
   );
