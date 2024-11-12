@@ -20,10 +20,11 @@ const Verify = () => {
             </button>
           </div>
         </div>
-        <div className="w-full mt-10 text-center text-sm text-gray-600">
+        {/* <div className="w-full mt-10 text-center text-sm text-gray-600">
           We appreciate you for registering with us. You can look forward to
           giving you the best services we have to offer.
-        </div>
+        </div> */}
+        <div>Hello</div>
       </div>
     </div>
   );
